@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>你的名字 - 个人主页</title>
+  <meta name="description" content="这是你的个人主页，介绍你是谁，以及你的播客内容。" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="index.html">你的名字</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="index.html" aria-current="page">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="podcasts.html">播客</a>
+        <a href="contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">你好，我是</p>
+      <h1>你的名字</h1>
+      <p class="hero-text">
+        我关注技术、创作、生活方式与长期主义。这里是我的个人主页，
+        也是我整理播客内容的地方。
+      </p>
+
+      <div class="hero-actions">
+        <a class="button" href="podcasts.html">查看播客</a>
+        <a class="button button-secondary" href="about.html">了解我</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>我在做什么</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>播客</h3>
+          <p>
+            我会定期录制一些关于思考、工作、学习和生活的节目。
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>写作</h3>
+          <p>
+            我喜欢用文字整理想法，也希望把复杂的事情讲清楚。
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>探索</h3>
+          <p>
+            对新工具、新方法和更好的生活方式保持好奇。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section quiet-box">
+      <h2>最新动态</h2>
+      <p>
+        你可以在播客页面查看最近更新的节目，也可以通过联系页面找到我。
+      </p>
+      <p>
+        <a href="podcasts.html">进入播客列表 →</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 你的名字. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
