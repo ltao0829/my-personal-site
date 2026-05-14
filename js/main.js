@@ -46,7 +46,7 @@
     const link = document.createElement("a");
     link.className = "podcast-link";
     link.href = podcast.url;
-    link.textContent = "播放这一期 →";
+    link.textContent = "阅读这一篇 →";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
 
@@ -84,7 +84,7 @@
         list.innerHTML = "";
         const empty = document.createElement("p");
         empty.className = "muted";
-        empty.textContent = "暂时还没有播客内容。";
+        empty.textContent = "暂时还没有博客内容。";
         list.appendChild(empty);
         return;
       }

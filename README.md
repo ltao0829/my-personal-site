@@ -13,7 +13,7 @@
 
 - 首页：`index.html`
 - 关于我：`about.html`
-- 播客：`podcasts.html`
+- 博客：`podcasts.html`
 - 联系：`contact.html`
 
 ## 新增播客
