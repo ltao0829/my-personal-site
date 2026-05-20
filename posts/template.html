@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>文章标题 - LiuTao</title>
+  <meta name="description" content="这里是文章的简短描述或摘要。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">LiuTao</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-05-20</p>
+      <h1>文章标题</h1>
+      <p>这里是文章的简短描述或摘要。它会显示在博客列表的简介中，帮助读者快速了解本篇内容。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>
+        这是文章的第一段。你可以在这里开始写你的正文内容。静态网页支持各种标准的 HTML 标签。
+      </p>
+
+      <h2>二级标题：如何开始编写内容</h2>
+      <p>
+        你可以使用 <code>&lt;h2&gt;</code> 标签来分段。段落文字请用 <code>&lt;p&gt;</code> 标签包裹。
+        如果需要加粗，可以使用 <code>&lt;strong&gt;</code> 标签。
+      </p>
+
+      <p>
+        这是一个例子：<strong>这是加粗的内容</strong>。你也可以添加超链接，比如指向
+        <a href="../index.html">返回首页</a>。
+      </p>
+
+      <h2>二级标题：添加图片或代码块</h2>
+      <p>
+        如果需要添加图片，可以使用标准的 <code>&lt;img&gt;</code> 标签，并确保图片资源路径正确。
+      </p>
+      
+      <!-- 代码块示例 -->
+      <pre style="background: var(--surface); border: 1px solid var(--border); padding: 16px; border-radius: var(--radius); overflow-x: auto; font-family: monospace; line-height: 1.5; color: var(--text);">
+const message = "Hello, World!";
+console.log(message);</pre>
+
+      <p>
+        祝你写作愉快！
+      </p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> LiuTao. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

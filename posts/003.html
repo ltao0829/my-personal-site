@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>如何建立一个长期维护的个人网站 - LiuTao</title>
+  <meta name="description" content="这一期聊聊为什么个人网站仍然重要，以及如何用简单、安全、低维护成本的方式把它搭建起来。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">LiuTao</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-05-01</p>
+      <h1>第 003 期：如何建立一个长期维护的个人网站</h1>
+      <p>这一期聊聊为什么个人网站仍然重要，以及如何用简单、安全、低维护成本的方式把它搭建起来。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>
+        在社交媒体和算法分发的时代，拥有一个属于自己的个人网站正在变得比以往任何时候都更加珍贵。
+      </p>
+
+      <h2>为什么个人网站仍然重要？</h2>
+      <p>
+        首先，个人网站是你在数字世界的“数字房产”。在各大平台上，你的内容归根结底属于平台所有，你面临着平台规则变化、账号被封禁或者平台本身衰落的风险。而个人网站的数据完全由你自己掌控。
+      </p>
+      <p>
+        其次，它没有任何干扰。没有铺天盖地的广告，没有信息流推送的干扰，没有点赞和评论数量带来的社交压力。这里是你思想的自留地。
+      </p>
+
+      <h2>简单、安全、低维护的设计</h2>
+      <p>
+        很多人在建站之初往往雄心勃勃，使用复杂的动态后台、数据库、框架，然而大部分人最后都因为昂贵的维护成本或者频繁的安全漏洞更新而放弃。
+      </p>
+      <p>
+        我的建议是采用<strong>极简的静态 HTML + CSS + JavaScript</strong> 方案。它有以下几个无可比拟的优势：
+      </p>
+      <ul>
+        <li><strong>零成本托管</strong>：你可以直接托管在 GitHub Pages 上，不需要买云服务器。</li>
+        <li><strong>极佳的安全性</strong>：没有数据库和服务器端代码，意味着它几乎免疫 99% 的常见黑客攻击。</li>
+        <li><strong>极快的加载速度</strong>：浏览器直接渲染 HTML，没有任何后台查询损耗。</li>
+      </ul>
+
+      <p>
+        保持简单，才能行稳致远。
+      </p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> LiuTao. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
