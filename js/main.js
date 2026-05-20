@@ -24,28 +24,28 @@
     }).format(date);
   }
 
-  function createPodcastItem(podcast) {
+  function createBlogItem(blog) {
     const article = document.createElement("article");
-    article.className = "podcast-item";
+    article.className = "blog-item";
 
     const meta = document.createElement("p");
-    meta.className = "podcast-meta";
-    meta.textContent = formatDate(podcast.date);
+    meta.className = "blog-meta";
+    meta.textContent = formatDate(blog.date);
 
     const title = document.createElement("h2");
-    title.className = "podcast-title";
-    title.textContent = podcast.title;
+    title.className = "blog-title";
+    title.textContent = blog.title;
 
     const description = document.createElement("p");
-    description.className = "podcast-description";
-    description.textContent = podcast.description;
+    description.className = "blog-description";
+    description.textContent = blog.description;
 
     const actions = document.createElement("div");
-    actions.className = "podcast-actions";
+    actions.className = "blog-actions";
 
     const link = document.createElement("a");
-    link.className = "podcast-link";
-    link.href = podcast.url;
+    link.className = "blog-link";
+    link.href = blog.url;
     link.textContent = "阅读这一篇 →";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
@@ -60,27 +60,27 @@
     return article;
   }
 
-  async function loadPodcasts() {
-    const list = document.querySelector("#podcast-list");
+  async function loadBlogs() {
+    const list = document.querySelector("#blog-list");
 
     if (!list) {
       return;
     }
 
     try {
-      const response = await fetch("data/podcasts.json", {
+      const response = await fetch("data/blogs.json", {
         headers: {
           "Accept": "application/json"
         }
       });
 
       if (!response.ok) {
-        throw new Error("无法加载 podcasts.json");
+        throw new Error("无法加载 blogs.json");
       }
 
-      const podcasts = await response.json();
+      const blogs = await response.json();
 
-      if (!Array.isArray(podcasts) || podcasts.length === 0) {
+      if (!Array.isArray(blogs) || blogs.length === 0) {
         list.innerHTML = "";
         const empty = document.createElement("p");
         empty.className = "muted";
@@ -89,18 +89,18 @@
         return;
       }
 
-      podcasts.sort(function (a, b) {
+      blogs.sort(function (a, b) {
         return new Date(b.date) - new Date(a.date);
       });
 
       list.innerHTML = "";
 
-      podcasts.forEach(function (podcast) {
-        if (!podcast.title || !podcast.description || !podcast.date || !podcast.url) {
+      blogs.forEach(function (blog) {
+        if (!blog.title || !blog.description || !blog.date || !blog.url) {
           return;
         }
 
-        const item = createPodcastItem(podcast);
+        const item = createBlogItem(blog);
         list.appendChild(item);
       });
     } catch (error) {
@@ -108,7 +108,7 @@
 
       const message = document.createElement("p");
       message.className = "muted";
-      message.textContent = "播客列表加载失败，请稍后再试。";
+      message.textContent = "博客列表加载失败，请稍后再试。";
 
       list.appendChild(message);
 
@@ -117,5 +117,5 @@
   }
 
   setCurrentYear();
-  loadPodcasts();
+  loadBlogs();
 })();

@@ -207,7 +207,7 @@ p {
 }
 
 .card,
-.podcast-item,
+.blog-item,
 .quiet-box {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -244,34 +244,34 @@ p {
   color: var(--muted);
 }
 
-.podcast-list {
+.blog-list {
   display: grid;
   gap: 18px;
 }
 
-.podcast-item {
+.blog-item {
   padding: 24px;
 }
 
-.podcast-meta {
+.blog-meta {
   color: var(--muted);
   font-size: 0.92rem;
   margin-bottom: 8px;
 }
 
-.podcast-title {
+.blog-title {
   margin-bottom: 10px;
 }
 
-.podcast-description {
+.blog-description {
   color: var(--muted);
 }
 
-.podcast-actions {
+.blog-actions {
   margin-top: 18px;
 }
 
-.podcast-link {
+.blog-link {
   display: inline-flex;
   align-items: center;
   font-weight: 600;

@@ -13,12 +13,13 @@
 
 - 首页：`index.html`
 - 关于我：`about.html`
-- 博客：`podcasts.html`
+- 博客：`blog.html`
 - 联系：`contact.html`
 
-## 新增播客
+## 新增博客
 
 编辑：
 
 ```txt
-data/podcasts.json
+data/blogs.json
+```
