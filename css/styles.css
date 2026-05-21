@@ -341,3 +341,18 @@ p {
     gap: 4px;
   }
 }
+
+/* Comments Section */
+.comments-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.comments-section h3 {
+  font-size: 1.35rem;
+  margin-bottom: 24px;
+  color: var(--text);
+  font-weight: 700;
+}
+
