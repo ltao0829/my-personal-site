@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LiuTao's Blog</title>
+    <link>https://ltao0829.github.io/my-personal-site/</link>
+    <description>LiuTao 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 May 2026 14:30:00 +0800</lastBuildDate>
+    <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>第 003 期：如何建立一个长期维护的个人网站</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/003.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/003.html</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0800</pubDate>
+      <description>这一期聊聊为什么个人网站仍然重要，以及如何用简单、安全、低维护成本的方式把它搭建起来。</description>
+    </item>
+    
+    <item>
+      <title>第 002 期：信息过载时代的输入与输出</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/002.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/002.html</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0800</pubDate>
+      <description>我们每天接触大量信息，但真正重要的是如何筛选、消化，并最终形成自己的表达。</description>
+    </item>
+    
+    <item>
+      <title>第 001 期：为什么我开始做博客</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/001.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/001.html</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0800</pubDate>
+      <description>第一期节目，聊聊我为什么想做博客，以及我希望通过文字记录什么。</description>
+    </item>
+  </channel>
+</rss>

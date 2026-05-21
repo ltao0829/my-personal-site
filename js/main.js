@@ -1,6 +1,23 @@
 (function () {
   "use strict";
 
+  // Umami Analytics Configuration
+  const UMAMI_CONFIG = {
+    // 提示：访问并登录 https://cloud.umami.is 添加你的网站后，将获取的 website-id 填入下方以开启访问统计
+    websiteId: "YOUR_UMAMI_WEBSITE_ID"
+  };
+
+  function initAnalytics() {
+    if (UMAMI_CONFIG.websiteId && UMAMI_CONFIG.websiteId !== "YOUR_UMAMI_WEBSITE_ID") {
+      const script = document.createElement("script");
+      script.async = true;
+      script.defer = true;
+      script.src = "https://cloud.umami.is/script.js";
+      script.setAttribute("data-website-id", UMAMI_CONFIG.websiteId);
+      document.head.appendChild(script);
+    }
+  }
+
   function setCurrentYear() {
     const yearElements = document.querySelectorAll("#year");
     const currentYear = new Date().getFullYear();
@@ -156,4 +173,5 @@
   setCurrentYear();
   loadBlogs();
   initThemeToggle();
+  initAnalytics();
 })();

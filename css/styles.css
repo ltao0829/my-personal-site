@@ -428,4 +428,32 @@ p {
   fill: none;
 }
 
+/* Avatar styling */
+.avatar-container {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.avatar-container.centered {
+  justify-content: center;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease;
+  background: var(--surface);
+}
+
+.avatar:hover {
+  transform: scale(1.08) rotate(5deg);
+  border-color: var(--accent);
+}
+
+
 
