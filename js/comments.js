@@ -6,7 +6,7 @@
   // ==========================================
   const CUSDIS_CONFIG = {
     // 请在此处填入你在 Cusdis 官网 (https://cusdis.com) 注册获取的 appId
-    appId: "YOUR_CUSDIS_APP_ID", 
+    appId: "e37ed811-a7c7-40ba-a327-12f1a1024aa1", 
     host: "https://cusdis.com"
   };
 
