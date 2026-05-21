@@ -4,7 +4,7 @@
   // Umami Analytics Configuration
   const UMAMI_CONFIG = {
     // 提示：访问并登录 https://cloud.umami.is 添加你的网站后，将获取的 website-id 填入下方以开启访问统计
-    websiteId: "YOUR_UMAMI_WEBSITE_ID"
+    websiteId: "da57bb5b-03e4-499b-b8e3-efdafef92f63"
   };
 
   function initAnalytics() {
