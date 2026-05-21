@@ -116,6 +116,44 @@
     }
   }
 
+  function initThemeToggle() {
+    const nav = document.querySelector(".site-nav");
+    if (!nav) {
+      return;
+    }
+
+    const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>';
+    const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+
+    // 读取当前生效的主题（由 Head 内联防闪烁脚本设置）
+    let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+
+    const button = document.createElement("button");
+    button.className = "theme-toggle";
+    button.type = "button";
+    button.setAttribute("aria-label", "切换主题");
+    button.setAttribute("title", "切换暗色/亮色模式");
+    button.innerHTML = currentTheme === "dark" ? sunIcon : moonIcon;
+
+    button.addEventListener("click", function () {
+      const nextTheme = currentTheme === "light" ? "dark" : "light";
+      
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("theme", nextTheme);
+      button.innerHTML = nextTheme === "dark" ? sunIcon : moonIcon;
+      
+      currentTheme = nextTheme;
+
+      // 派发全局主题变更自定义事件，用于与其他组件联动（如评论区）
+      document.dispatchEvent(new CustomEvent("theme-changed", {
+        detail: { theme: nextTheme }
+      }));
+    });
+
+    nav.appendChild(button);
+  }
+
   setCurrentYear();
   loadBlogs();
+  initThemeToggle();
 })();

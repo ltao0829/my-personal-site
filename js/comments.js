@@ -48,11 +48,14 @@
     threadDiv.setAttribute("data-app-id", CUSDIS_CONFIG.appId);
     
     // 自动派生当前页面的唯一 ID、链接与标题
-    // 使用相对路径作为 page-id 可以避免域名改变（如本地测试 vs 线上部署）导致评论丢失
     const pageId = window.location.pathname;
     threadDiv.setAttribute("data-page-id", pageId);
     threadDiv.setAttribute("data-page-url", window.location.href);
     threadDiv.setAttribute("data-page-title", document.title);
+
+    // 获取并设置当前生效的主题
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    threadDiv.setAttribute("data-theme", currentTheme);
 
     // 将 Cusdis 线程 div 加入到父容器中
     container.appendChild(threadDiv);
@@ -64,6 +67,19 @@
     script.src = CUSDIS_CONFIG.host + "/js/cusdis.es.js";
 
     document.body.appendChild(script);
+
+    // 3. 监听全局主题改变事件，联动更新 Cusdis 主题
+    document.addEventListener("theme-changed", function (e) {
+      const nextTheme = e.detail.theme;
+      if (window.CUSDIS && typeof window.CUSDIS.setTheme === "function") {
+        window.CUSDIS.setTheme(nextTheme);
+      } else {
+        const el = document.getElementById("cusdis_thread");
+        if (el) {
+          el.setAttribute("data-theme", nextTheme);
+        }
+      }
+    });
   }
 
   // 确保在 DOM 解析完成后加载评论区
