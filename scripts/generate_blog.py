@@ -47,15 +47,20 @@ def generate_mock_content(next_index, index_str):
     return title, description, content
 
 def call_gemini_api(next_index, index_str, existing_titles):
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types
     
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("Error: GEMINI_API_KEY environment variable is missing.", file=sys.stderr)
         sys.exit(1)
         
-    print("API Key detected in environment. Configuring Google Generative AI...")
-    genai.configure(api_key=api_key)
+    print("API Key detected in environment. Configuring google-genai Client...")
+    try:
+        client = genai.Client(api_key=api_key)
+    except Exception as e:
+        print(f"Error initializing Google GenAI Client: {e}", file=sys.stderr)
+        sys.exit(1)
     
     # Format existing titles list for the prompt
     titles_context = "\n".join([f"- {t}" for t in existing_titles])
@@ -81,18 +86,19 @@ def call_gemini_api(next_index, index_str, existing_titles):
 3. "content": 文章的正文内容。必须是纯 HTML 格式。
    - 只能使用基本的 HTML 标签，如 <p>, <h2>, <ul>, <li>, <strong>, <pre>（代码块，如果有代码的话）等。
    - 不要包含 <html>, <head>, <body>, <!DOCTYPE> 标签。
-   - 不要包含全局 CSS 样式，只返回标签包围的段落 and 段落结构。
+   - 不要包含全局 CSS 样式，只返回标签包围的段落与结构。
    - 确保文章深度足够，字数在 800 - 1500 字左右，文字排版优雅，行文有启发性，结构清晰（使用 <h2> 分段）。
 """
     
-    print(f"Calling Gemini API for post #{index_str}...")
+    print(f"Calling Gemini API (gemini-2.5-flash) for post #{index_str}...")
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        
-        # Request JSON response type
-        response = model.generate_content(
-            prompt,
-            generation_config={"response_mime_type": "application/json", "temperature": 0.7}
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                temperature=0.7,
+            ),
         )
     except Exception as e:
         print(f"Error calling Gemini API: {e}", file=sys.stderr)
@@ -103,14 +109,6 @@ def call_gemini_api(next_index, index_str, existing_titles):
         print("Successfully received text response from Gemini.")
     except Exception as e:
         print(f"Error: Failed to retrieve text from Gemini response: {e}", file=sys.stderr)
-        try:
-            print(f"Prompt feedback: {response.prompt_feedback}", file=sys.stderr)
-        except Exception as pe:
-            print(f"Failed to read prompt feedback: {pe}", file=sys.stderr)
-        try:
-            print(f"Candidates: {response.candidates}", file=sys.stderr)
-        except Exception as ce:
-            print(f"Failed to read candidates: {ce}", file=sys.stderr)
         sys.exit(1)
         
     # Clean raw_text from markdown code blocks if present
