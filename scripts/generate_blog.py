@@ -93,7 +93,7 @@ def call_gemini_api(next_index, index_str, existing_titles):
     print(f"Calling Gemini API for post #{index_str}...")
     import time
     
-    models_to_try = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    models_to_try = ["gemini-3.5-flash", "gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
     response = None
     last_error = None
     
