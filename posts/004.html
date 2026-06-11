@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 004 期：反向迭代：在臃肿的现代 Web 中重拾原生之美 - LiuTao</title>
+  <meta name="description" content="探讨在前端框架与构建工具日益臃肿的今天，我们如何通过回归 HTML、CSS 原生标准，构建高性能、长寿且优雅的个人数字空间。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">LiuTao</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-06-11</p>
+      <h1>第 004 期：反向迭代：在臃肿的现代 Web 中重拾原生之美</h1>
+      <p>探讨在前端框架与构建工具日益臃肿的今天，我们如何通过回归 HTML、CSS 原生标准，构建高性能、长寿且优雅的个人数字空间。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>你是否也有过这样的体验：打开一个仅仅用来阅读文字的网页，浏览器却加载了数兆大小的 JavaScript 脚本，风扇开始狂转，页面在白屏数秒后才勉强渲染出来？</p>
+<p>在这个硬件性能过剩的时代，我们的网页却没有变得更快，反而变得越来越臃肿。作为一名开发者与数字生活的观察者，我常常在想：我们真的需要那么多框架、打包工具和第三方依赖，才能在互联网上留下自己的声音吗？</p>
+
+<h2>一、现代 Web 的「肥胖症」与认知过载</h2>
+<p>不可否认，React、Vue、Webpack 等现代前端工具链极大地提升了大型团队协作与复杂单页应用（SPA）的开发效率。但这种「工程化」的思维，正在无形中被泛化到所有场景。即使是写一个个人博客、一个简单的产品落地页，我们也习惯性地使用命令行引入成百上千个依赖包。</p>
+<p>这种做法带来了两个代价：一是性能的损耗，用户的浏览器需要耗费电量和算力去解析那些本不需要的 JavaScript；二是维护的焦虑，今天写下的代码，可能在两年后因为某个底层依赖的废弃而无法通过构建。我们被困在了工具的迭代中，失去了对代码最纯粹的掌控感。</p>
+
+<h2>二、反向迭代：原生的力量</h2>
+<p>所谓「反向迭代」，并不是固步自封，而是主动卸下不必要的包袱，重新审视我们手中的原生武器。今天的 Web 标准（HTML5, CSS3, ES6+）已经足够强大，甚至超越了许多人对它们的刻板印象。</p>
+<ul>
+  <li><strong>无损的布局能力：</strong>CSS Grid 和 Flexbox 已经成为主流，无需任何框架，几行代码就能实现完美的响应式布局。</li>
+  <li><strong>原生的交互：</strong>原生的 Web Components 和现代 JavaScript 让我们无需打包工具，就能写出模块化、可复用的组件。</li>
+  <li><strong>极致的性能：</strong>没有了虚拟 DOM 的开销，没有了框架运行时的体积，原生的 HTML 页面可以在毫秒级内完成渲染，给用户带来如丝般顺滑的即时反馈。</li>
+</ul>
+<p>当我们放弃那些复杂的抽象层，直接与浏览器对话时，你会发现开发变得无比轻松和解脱。你不再需要配置复杂的构建脚本，不再需要解决依赖冲突，你只需要一个文本编辑器，和一颗专注创作的心。</p>
+
+<h2>三、设计美学：用排版和留白传递温度</h2>
+<p>极简的技术理念，自然孕育出极简的设计美学。在失去了花哨的动效和复杂的组件库后，我们如何吸引读者？答案是：回归排版与设计的本质。</p>
+<p>优秀的中文排版，关键在于字距、行高、段落间距以及字体的选择。通过合理的 CSS 行高（推荐 1.7 到 1.9 之间）和字间距，配合优美的系统默认字体，我们就能创造出极佳的阅读视界。留白不是浪费，而是给眼睛的呼吸空间。当页面上没有了各种浮窗、侧边栏和无意义的装饰，读者的注意力自然会聚焦在内容本身。这不仅是视觉上的净化，更是对读者时间的尊重。</p>
+
+<h2>四、长期主义的技术选择</h2>
+<p>我一直坚信，个人网站是创作者在数字世界中的「自留地」。既然是自留地，它就应该具有长久的生命力。框架会过时，构建工具有一天会无法运行，唯有 W3C 的 HTML 与 CSS 标准，是互联网上最坚固的基石。</p>
+<p>一个使用纯原生 HTML/CSS 编写的网页，在二十年后，依然可以被当时的浏览器完美打开并阅读。这种「一次编写，终身可用」的确定性，就是长期主义在技术上的最好体现。它让我们免于追逐潮流的疲惫，将精力真正投入到有价值的内容创作中。</p>
+
+<h2>结语：在数字生活中做减法</h2>
+<p>「反向迭代」不仅是一种开发选择，更是一种生活哲学。在这个不断做加法的世界里，能够主动做减法是一种难得的能力。无论是精简我们的代码，还是清理我们的数字设备，亦或是拒绝无意义的信息输入，本质上都是为了留出空间，去容纳那些真正重要、能够经受时间考验的事物。</p>
+<p>在下一篇文章开始前，不妨试着关掉那些构建工具，新建一个简单的 HTML 文件，亲手写下几行纯粹的代码，感受那久违的、轻盈的掌控感。</p>
+    </article>
+
+    <!-- 留言与讨论区 -->
+    <section class="comments-section">
+      <h3>💬 交流与讨论</h3>
+      <div id="comments-container"></div>
+    </section>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> LiuTao. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/comments.js" defer></script>
+</body>
+</html>
