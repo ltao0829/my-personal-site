@@ -90,18 +90,44 @@ def call_gemini_api(next_index, index_str, existing_titles):
    - 确保文章深度足够，字数在 800 - 1500 字左右，文字排版优雅，行文有启发性，结构清晰（使用 <h2> 分段）。
 """
     
-    print(f"Calling Gemini API (gemini-2.5-flash) for post #{index_str}...")
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                temperature=0.7,
-            ),
-        )
-    except Exception as e:
-        print(f"Error calling Gemini API: {e}", file=sys.stderr)
+    print(f"Calling Gemini API for post #{index_str}...")
+    import time
+    
+    models_to_try = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    response = None
+    last_error = None
+    
+    for model_name in models_to_try:
+        print(f"Trying to call Gemini API using model: {model_name}...")
+        retries = 3
+        delay = 2 # seconds
+        for attempt in range(retries):
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json",
+                        temperature=0.7,
+                    ),
+                )
+                break
+            except Exception as e:
+                last_error = e
+                err_str = str(e)
+                if "503" in err_str or "demand" in err_str or "UNAVAILABLE" in err_str:
+                    print(f"Model {model_name} is busy (Attempt {attempt+1}/{retries}). Retrying in {delay}s...", file=sys.stderr)
+                    time.sleep(delay)
+                    delay *= 2
+                else:
+                    print(f"Error calling {model_name}: {e}. Skipping retries.", file=sys.stderr)
+                    break
+        if response is not None:
+            print(f"Successfully generated content using model: {model_name}")
+            break
+            
+    if response is None:
+        print(f"All models failed. Last error: {last_error}", file=sys.stderr)
         sys.exit(1)
         
     try:
