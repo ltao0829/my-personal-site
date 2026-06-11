@@ -54,6 +54,7 @@ def call_gemini_api(next_index, index_str, existing_titles):
         print("Error: GEMINI_API_KEY environment variable is missing.", file=sys.stderr)
         sys.exit(1)
         
+    print("API Key detected in environment. Configuring Google Generative AI...")
     genai.configure(api_key=api_key)
     
     # Format existing titles list for the prompt
@@ -80,24 +81,50 @@ def call_gemini_api(next_index, index_str, existing_titles):
 3. "content": 文章的正文内容。必须是纯 HTML 格式。
    - 只能使用基本的 HTML 标签，如 <p>, <h2>, <ul>, <li>, <strong>, <pre>（代码块，如果有代码的话）等。
    - 不要包含 <html>, <head>, <body>, <!DOCTYPE> 标签。
-   - 不要包含全局 CSS 样式，只返回标签包围的段落和段落结构。
+   - 不要包含全局 CSS 样式，只返回标签包围的段落 and 段落结构。
    - 确保文章深度足够，字数在 800 - 1500 字左右，文字排版优雅，行文有启发性，结构清晰（使用 <h2> 分段）。
 """
     
     print(f"Calling Gemini API for post #{index_str}...")
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    
-    # Request JSON response type
-    response = model.generate_content(
-        prompt,
-        generation_config={"response_mime_type": "application/json", "temperature": 0.7}
-    )
+    try:
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        
+        # Request JSON response type
+        response = model.generate_content(
+            prompt,
+            generation_config={"response_mime_type": "application/json", "temperature": 0.7}
+        )
+    except Exception as e:
+        print(f"Error calling Gemini API: {e}", file=sys.stderr)
+        sys.exit(1)
+        
+    try:
+        raw_text = response.text
+        print("Successfully received text response from Gemini.")
+    except Exception as e:
+        print(f"Error: Failed to retrieve text from Gemini response: {e}", file=sys.stderr)
+        try:
+            print(f"Prompt feedback: {response.prompt_feedback}", file=sys.stderr)
+        except Exception as pe:
+            print(f"Failed to read prompt feedback: {pe}", file=sys.stderr)
+        try:
+            print(f"Candidates: {response.candidates}", file=sys.stderr)
+        except Exception as ce:
+            print(f"Failed to read candidates: {ce}", file=sys.stderr)
+        sys.exit(1)
+        
+    # Clean raw_text from markdown code blocks if present
+    cleaned_text = raw_text.strip()
+    if cleaned_text.startswith("```"):
+        cleaned_text = re.sub(r"^```(?:json)?\n", "", cleaned_text)
+        cleaned_text = re.sub(r"\n```$", "", cleaned_text)
+    cleaned_text = cleaned_text.strip()
     
     try:
-        data = json.loads(response.text)
-        title = data["title"]
-        description = data["description"]
-        content = data["content"]
+        data = json.loads(cleaned_text)
+        title = data.get("title", f"第 {index_str} 期：无标题")
+        description = data.get("description", "无摘要。")
+        content = data.get("content", "<p>无内容。</p>")
         
         # Guard against AI forgetting the prefix
         prefix = f"第 {index_str} 期："
@@ -107,8 +134,9 @@ def call_gemini_api(next_index, index_str, existing_titles):
             
         return title, description, content
     except Exception as e:
-        print(f"Failed to parse Gemini response: {e}", file=sys.stderr)
-        print(f"Raw response: {response.text}", file=sys.stderr)
+        print(f"Failed to parse JSON response: {e}", file=sys.stderr)
+        print(f"Raw response text: {raw_text}", file=sys.stderr)
+        print(f"Cleaned response text: {cleaned_text}", file=sys.stderr)
         sys.exit(1)
 
 def update_files(title, description, content, index_str):
@@ -154,8 +182,14 @@ def update_files(title, description, content, index_str):
     
     # 2. Update data/blogs.json
     blogs_path = "data/blogs.json"
-    with open(blogs_path, "r", encoding="utf-8") as f:
-        blogs = json.load(f)
+    if os.path.exists(blogs_path):
+        with open(blogs_path, "r", encoding="utf-8") as f:
+            try:
+                blogs = json.load(f)
+            except json.JSONDecodeError:
+                blogs = []
+    else:
+        blogs = []
         
     new_blog = {
         "title": title,
