@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write        # Grants write permission to push commits to the repository
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     runs-on: ubuntu-latest
