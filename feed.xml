@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>LiuTao 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 12 Jun 2026 13:49:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 13:50:19 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-            <item>
+                <item>
+      <title>第 006 期：本地优先：在云端时代重建数字资产的「实体感」</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/006.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/006.html</guid>
+      <pubDate>Sun, 14 Jun 2026 13:50:19 +0800</pubDate>
+      <description>探讨在 SaaS 与云服务泛滥的今天，我们如何通过「本地优先」的理念重新掌控自己的数据，重拾数字生活的安全感与确定性。</description>
+    </item>
+    <item>
       <title>第 005 期：屏幕上的呼吸感：从排版美学看数字阅读的专注力</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/005.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/005.html</guid>
