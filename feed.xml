@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>LiuTao 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 14 Jun 2026 13:50:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2026 14:34:52 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                <item>
+                    <item>
+      <title>第 007 期：慢软件运动：在即时反馈时代重寻「耐用性」</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/007.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/007.html</guid>
+      <pubDate>Tue, 16 Jun 2026 14:34:52 +0800</pubDate>
+      <description>探讨在软件订阅制与频繁迭代的今天，我们为何需要回归那些不常更新、功能克制、却能陪伴我们十年的「慢软件」。</description>
+    </item>
+    <item>
       <title>第 006 期：本地优先：在云端时代重建数字资产的「实体感」</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/006.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/006.html</guid>

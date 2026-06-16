@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 007 期：慢软件运动：在即时反馈时代重寻「耐用性」 - LiuTao</title>
+  <meta name="description" content="探讨在软件订阅制与频繁迭代的今天，我们为何需要回归那些不常更新、功能克制、却能陪伴我们十年的「慢软件」。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">LiuTao</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-06-16</p>
+      <h1>第 007 期：慢软件运动：在即时反馈时代重寻「耐用性」</h1>
+      <p>探讨在软件订阅制与频繁迭代的今天，我们为何需要回归那些不常更新、功能克制、却能陪伴我们十年的「慢软件」。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <h2>被「更新」绑架的数字生活</h2><p>我们生活在一个被「更新」绑架的时代。手机应用每天都在小红点的催促下自我迭代，SaaS 工具每个月都在调整订阅价格和功能界面，原本安静躺在硬盘里的软件，如今成了随时准备变形的云端怪兽。今天你习惯的快捷键，明天可能就在一次「重构 UI」中消失得无影无踪。</p><p>这种无休止的变动，被现代软件工程冠以「敏捷开发」和「持续交付」的美名。然而，作为工具的使用者，我们却在一次次的被动适应中感到疲惫。我们开始怀念那些买断制、不常更新、甚至十几年如一日保持同样界面的工具。这种反思，正在催生一场关于「慢软件」（Slow Software）的复兴。</p><h2>什么是「慢软件」？</h2><p>「慢软件」并非指运行速度慢。相反，由于它们通常采用原生技术栈、拒绝臃肿的第三方库，其运行速度往往快如闪电。这里的「慢」，指的是它的<strong>演进速度</strong>、<strong>生命周期</strong>以及<strong>它对用户注意力的索取方式</strong>。</p><p>一个优秀的慢软件，通常具备以下三个核心特质：</p><ul><li><strong>功能收敛，边界清晰：</strong>它不试图解决所有问题，而是完美地解决一个具体问题。它没有「顺便做个社交」的野心，也没有「强行接入 AI」的焦虑。</li><li><strong>本地优先，格式开放：</strong>它将数据的所有权完整地交还给用户。它优先将数据保存在本地，并使用 Markdown、JSON、SQLite 或 plain text 等开放且通用的格式，确保即使软件本身消失，数据依然可读。</li><li><strong>生命周期以「十年」为单位：</strong>它不依赖云端服务器的存活。只要操作系统还兼容，它就能一直工作下去，不因开发商倒闭或转型而失效。</li></ul><h2>效率的悖论：快迭代 vs. 长寿命</h2><p>现代商业软件的逻辑是「不增长，毋宁死」。为了向投资人展示活跃度，产品经理不得不发明新的功能，设计师不得不重新设计原本已经完美的界面。这种「为了迭代而迭代」的做法，造成了巨大的数字熵增。</p><p>然而，真正的个人生产力往往来源于<strong>肌肉记忆</strong>和<strong>心流体验</strong>。当一个工具足够稳定，它就会在物理层面上「消失」，成为你身体和思维的延伸。你不需要思考如何使用它，你的思想可以直接流淌到屏幕上。频繁的更新和改版，恰恰是在不断打断这种心流，迫使你重新学习工具本身。</p><p>慢软件的哲学，本质上是一种长期主义。它承认工具的工具属性，尊重用户的习惯，并提供一种安全感：无论世界如何变化，这个角落永远安静、可靠、一如既往。</p><h2>寻找与构建你的「数字传家宝」</h2><p>在现实生活中，我们会珍视一把可以用上一辈子的铸铁锅，或者一支写不坏的钢笔。在数字世界里，我们也需要寻找，甚至亲手构建属于自己的「数字传家宝」。</p><p><strong>作为使用者：</strong>我们可以开始有意识地筛选工具。优先选择那些单机可用、支持买断、数据格式开放的软件。例如，用简单的文本编辑器替代复杂的云端笔记，用本地的 RSS 阅读器替代算法推荐的信息流，用原生命令行工具替代花哨的 GUI 客户端。</p><p><strong>作为开发者：</strong>我们可以尝试克制「重构」和「堆砌功能」的欲望。用极简的 HTML/CSS/JS 去写一个网页，用原生语言去写一个工具。在动手写下第一行代码时，问自己一个问题：「我写的这个东西，在十年后还能运行吗？」</p><h2>结语：在喧嚣中保留一块自留地</h2><p>慢软件运动，不是对技术的倒退和排斥，而是一种理性的审美觉醒。它让我们在追求「更快、最新、更智能」的狂热中停下来，重新思考人与工具的关系。</p><p>在一个不断变化的世界里，拥有几个不随时间流逝而变样的工具，保存一份不依赖任何云端服务的个人数据，这不仅是技术上的极简追求，更是在数字时代重建个人自主性与安全感的重要一步。</p>
+    </article>
+
+    <!-- 留言与讨论区 -->
+    <section class="comments-section">
+      <h3>💬 交流与讨论</h3>
+      <div id="comments-container"></div>
+    </section>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> LiuTao. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/comments.js" defer></script>
+</body>
+</html>
