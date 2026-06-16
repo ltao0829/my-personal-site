@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>狭义相对论核心公式解析 - 交互演示版</title>
+<!-- MathJax for rendering equations -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root {
+    --bg-color: #08090c;
+    --card-bg: rgba(20, 24, 33, 0.6);
+    --card-border: rgba(255, 74, 90, 0.15);
+    --text-primary: #ffffff;
+    --text-secondary: #ff9d9d;
+    --accent-red: #ff4a5a;
+    --accent-cyan: #00f0ff;
+    --accent-yellow: #ffc83b;
+    --font-sans: 'PingFang SC', 'Microsoft YaHei', -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 74, 90, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 45%),
+        radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 30px 30px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: rgba(8, 9, 12, 0.9);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+}
+
+.sidebar h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 15px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.nav-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-item:hover {
+    background: rgba(255, 74, 90, 0.05);
+    border-color: rgba(255, 74, 90, 0.2);
+    color: var(--text-primary);
+    transform: translateX(5px);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, rgba(255, 74, 90, 0.2) 0%, rgba(0, 240, 255, 0.05) 100%);
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 74, 90, 0.08);
+}
+
+/* Main Display Area */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px;
+}
+
+.slides-container {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    max-height: 640px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.96) translateY(15px);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(20px);
+    overflow-y: auto;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+}
+
+/* Slide Header */
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.slide-header h1 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-red) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide-number {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.slide-body {
+    flex-grow: 1;
+    display: flex;
+    gap: 30px;
+}
+
+.slide-content-left {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-content-right {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 20px;
+    min-height: 300px;
+}
+
+/* Bullet Lists */
+.bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.bullet-list li::before {
+    content: "▫";
+    position: absolute;
+    left: 5px;
+    color: var(--accent-red);
+    font-size: 1.2rem;
+    top: -2px;
+    font-weight: bold;
+}
+
+.bullet-list li strong {
+    color: var(--accent-red);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background: var(--accent-red);
+    color: white;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 15px rgba(255, 74, 90, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.progress-container {
+    flex-grow: 1;
+    margin: 0 30px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-cyan) 100%);
+    transition: width 0.3s ease;
+}
+
+/* Interactive Laboratory Panel */
+.relativity-lab {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lab-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--accent-cyan);
+    border-left: 3px solid var(--accent-cyan);
+    padding-left: 8px;
+    margin-bottom: 5px;
+}
+
+.slider-container {
+    background: rgba(255,255,255,0.02);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    color: rgba(255,255,255,0.6);
+}
+
+.slider-header span.val {
+    color: var(--accent-cyan);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.slider-container input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent-cyan);
+}
+
+.results-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.res-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+.res-box .label {
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+}
+
+.res-box .value {
+    font-family: monospace;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--accent-yellow);
+}
+
+/* Dilation Clocks Visualization */
+.clocks-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.clock-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.clock-face {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--text-primary);
+    border-radius: 50%;
+    position: relative;
+    background: #000;
+}
+
+.clock-face::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock-hand {
+    position: absolute;
+    width: 2px;
+    height: 35px;
+    background: var(--accent-cyan);
+    left: calc(50% - 1px);
+    top: 5px;
+    transform-origin: bottom center;
+    transform: rotate(0deg);
+}
+
+.clock-widget.moving .clock-face {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 10px rgba(255, 74, 90, 0.4);
+}
+
+.clock-widget.moving .clock-hand {
+    background: var(--accent-red);
+}
+
+.clock-widget .name {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+}
+
+/* Space Rocket Contraction Visualization */
+.rocket-container {
+    width: 100%;
+    height: 120px;
+    background: #000;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars-bg {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.05) 50%, transparent 100%);
+    animation: slideStars 4s linear infinite;
+}
+
+@keyframes slideStars {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.rocket-graphic {
+    width: 160px;
+    height: 45px;
+    position: relative;
+    transition: transform 0.1s linear;
+    transform-origin: center center;
+    z-index: 2;
+}
+
+/* SVG Spaceship representation */
+.spaceship-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Velocity Addition Interactive Tool */
+.vel-adder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vel-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.vel-inputs .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.vel-inputs label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.vel-inputs input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent-red);
+}
+
+.vel-result {
+    background: rgba(255, 74, 90, 0.05);
+    border: 1px dashed var(--accent-red);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.vel-result .label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 5px;
+}
+
+.vel-result .val {
+    font-family: monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-cyan);
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.toc-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.toc-card:hover {
+    border-color: var(--accent-red);
+    background: rgba(255, 74, 90, 0.05);
+    transform: translateY(-2px);
+}
+
+.toc-card .num {
+    font-family: monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--accent-red);
+}
+
+.toc-card .title {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Keyboard hint */
+.kbd-hint {
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+.kbd {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <a href="../blog.html" style="color: var(--accent-red); text-decoration: none; margin-bottom: 20px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">← 返回博客列表</a>
+    <h2>目录导航</h2>
+    <ul class="nav-list" id="nav-list">
+        <!-- populated dynamically -->
+    </ul>
+</div>
+
+<div class="main-content">
+    <div class="slides-container">
+        
+        <!-- Slide 1 -->
+        <div class="slide active" data-title="狭义相对论核心公式解析">
+            <div class="slide-header">
+                <h1>狭义相对论核心公式解析</h1>
+                <div class="slide-number">Slide 1 / 8</div>
+            </div>
+            <div class="slide-body" style="flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px;">
+                <h2 style="font-size: 2.2rem; background: linear-gradient(90deg, #fff 0%, var(--accent-red) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; border: none; padding: 0;">从洛伦兹变换到质能方程</h2>
+                <p style="font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; margin-top: 10px;">
+                    本演示稿深入解析爱因斯坦狭义相对论（Special Relativity）的底层数学描述与物理效应。
+                </p>
+                <div style="margin-top: 30px; font-size: 0.9rem; color: var(--accent-cyan); letter-spacing: 1px; text-transform: uppercase;">
+                    💡 点击右下角“下一页”或使用方向键进入
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" data-title="幻灯片目录">
+            <div class="slide-header">
+                <h1>幻灯片目录</h1>
+                <div class="slide-number">Slide 2 / 8</div>
+            </div>
+            <div class="slide-body" style="flex-direction: column; justify-content: center;">
+                <div class="toc-grid">
+                    <div class="toc-card" onclick="goToSlide(2)">
+                        <div class="num">01</div>
+                        <div class="title">洛伦兹变换 (Lorentz Transformation)</div>
+                    </div>
+                    <div class="toc-card" onclick="goToSlide(3)">
+                        <div class="num">02</div>
+                        <div class="title">时间膨胀 (Time Dilation)</div>
+                    </div>
+                    <div class="toc-card" onclick="goToSlide(4)">
+                        <div class="num">03</div>
+                        <div class="title">长度收缩 (Length Contraction)</div>
+                    </div>
+                    <div class="toc-card" onclick="goToSlide(5)">
+                        <div class="num">04</div>
+                        <div class="title">速度叠加公式 (Velocity Addition)</div>
+                    </div>
+                    <div class="toc-card" onclick="goToSlide(6)">
+                        <div class="num">05</div>
+                        <div class="title">质能关系 (Mass-Energy Relation)</div>
+                    </div>
+                    <div class="toc-card" onclick="goToSlide(7)">
+                        <div class="num">06</div>
+                        <div class="title">动量与能量关系 (Energy-Momentum)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" data-title="一、洛伦兹变换（核心）">
+            <div class="slide-header">
+                <h1>一、洛伦兹变换（核心）</h1>
+                <div class="slide-number">Slide 3 / 8</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>洛伦兹因子 (Lorentz Factor)</strong>：
+                            \[ \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \]
+                            它是相对论效应强弱的决定性因子。当速度 $v \ll c$ 时，$\gamma \approx 1$；当 $v \to c$ 时，$\gamma \to \infty$。
+                        </li>
+                        <li><strong>时空坐标变换</strong>：
+                            \[ x' = \gamma(x - vt), \quad t' = \gamma\left(t - \frac{vx}{c^2}\right) \]
+                            \[ y' = y, \quad z' = z \]
+                            将不同惯性系的空间与时间编织在一起，证明了空间和时间不是独立的，而是统一的**时空**。
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide-content-right">
+                    <div class="relativity-lab">
+                        <div class="lab-title">相对论因子计算实验室</div>
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <span>速度 (v)</span>
+                                <span class="val" id="vel-val-lab">0.00 c</span>
+                            </div>
+                            <input type="range" id="vel-slider-lab" min="0" max="0.999" step="0.001" value="0">
+                        </div>
+                        <div class="results-panel">
+                            <div class="res-box">
+                                <div class="label">洛伦兹因子 (γ)</div>
+                                <div class="value" id="gamma-val-lab">1.000</div>
+                            </div>
+                            <div class="res-box">
+                                <div class="label">光速占比 (%)</div>
+                                <div class="value" id="pct-val-lab">0.0 %</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" data-title="二、时间膨胀（动钟变慢）">
+            <div class="slide-header">
+                <h1>二、时间膨胀（动钟变慢）</h1>
+                <div class="slide-number">Slide 4 / 8</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>核心公式</strong>：
+                            \[ \Delta t = \gamma \Delta t_0 = \frac{\Delta t_0}{\sqrt{1 - \frac{v^2}{c^2}}} \]
+                        </li>
+                        <li><strong>概念解析</strong>：
+                            <ul>
+                                <li>$\Delta t_0$ (固有时间)：物体静止在其参考系中所测得的时间间隔。</li>
+                                <li>$\Delta t$ (运动时间)：在相对该物体以速度 $v$ 运动的参考系中所测得的时间。</li>
+                            </ul>
+                        </li>
+                        <li><strong>物理意义</strong>：在观察者看来，运动的钟表走得比自己手中静止的钟表慢。速度越接近光速，时间流逝越缓慢。</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right">
+                    <div class="relativity-lab">
+                        <div class="lab-title">时间膨胀直观对比</div>
+                        <div class="clocks-container">
+                            <div class="clock-widget">
+                                <div class="clock-face">
+                                    <div class="clock-hand" id="clock-hand-static"></div>
+                                </div>
+                                <span class="name">静止钟表 (γ = 1.0)</span>
+                            </div>
+                            <div class="clock-widget moving">
+                                <div class="clock-face">
+                                    <div class="clock-hand" id="clock-hand-moving"></div>
+                                </div>
+                                <span class="name" id="moving-clock-label">运动钟表 (γ = 1.00)</span>
+                            </div>
+                        </div>
+                        <div class="slider-container" style="margin-top: 15px;">
+                            <div class="slider-header">
+                                <span>速度控制 (v)</span>
+                                <span class="val" id="vel-val-clock">0.00 c</span>
+                            </div>
+                            <input type="range" id="vel-slider-clock" min="0" max="0.99" step="0.01" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide" data-title="三、长度收缩（动尺变短）">
+            <div class="slide-header">
+                <h1>三、长度收缩（动尺变短）</h1>
+                <div class="slide-number">Slide 5 / 8</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>核心公式</strong>：
+                            \[ L = \frac{L_0}{\gamma} = L_0 \sqrt{1 - \frac{v^2}{c^2}} \]
+                        </li>
+                        <li><strong>概念解析</strong>：
+                            <ul>
+                                <li>$L_0$ (固有长度)：物体在其静止参考系中所测得的长度（真实长度）。</li>
+                                <li>$L$ (运动长度)：在相对物体沿运动方向测得的长度。</li>
+                            </ul>
+                        </li>
+                        <li><strong>物理意义</strong>：运动物体在其运动方向上的尺寸会发生缩短。注意，这种收缩**仅发生在运动方向上**，垂直于运动方向的长度保持不变。</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right">
+                    <div class="relativity-lab">
+                        <div class="lab-title">飞船长度收缩演示</div>
+                        <div class="rocket-container">
+                            <div class="stars-bg" id="stars-bg"></div>
+                            <div class="rocket-graphic" id="rocket-graphic">
+                                <svg class="spaceship-svg" viewBox="0 0 160 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 12.5L130 5L155 22.5L130 40L15 32.5L5 22.5L15 12.5Z" fill="#ff4a5a" stroke="white" stroke-width="2"/>
+                                    <rect x="40" y="15" width="20" height="15" rx="5" fill="#00f0ff"/>
+                                    <rect x="75" y="15" width="20" height="15" rx="5" fill="#00f0ff"/>
+                                    <path d="M5 22.5H155" stroke="rgba(255,255,255,0.3)" stroke-dasharray="3 3"/>
+                                    <!-- Thruster flame -->
+                                    <path d="M5 22.5L-15 15L-10 22.5L-15 30L5 22.5Z" fill="#ffc83b"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="slider-container" style="margin-top: 15px;">
+                            <div class="slider-header">
+                                <span>速度控制 (v)</span>
+                                <span class="val" id="vel-val-rocket">0.00 c</span>
+                            </div>
+                            <input type="range" id="vel-slider-rocket" min="0" max="0.99" step="0.01" value="0">
+                        </div>
+                        <div class="res-box" style="text-align: center;">
+                            <span class="label">实际观测长度：</span>
+                            <span class="value" id="rocket-len-val">100.0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide" data-title="四、速度叠加公式">
+            <div class="slide-header">
+                <h1>四、速度叠加公式</h1>
+                <div class="slide-number">Slide 6 / 8</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>核心公式</strong>：
+                            \[ u_x = \frac{u'_x + v}{1 + \frac{u'_x v}{c^2}} \]
+                        </li>
+                        <li><strong>符号说明</strong>：
+                            <ul>
+                                <li>$v$：两个惯性参考系之间的相对运动速度。</li>
+                                <li>$u'_x$：物体在运动参考系中的运动速度。</li>
+                                <li>$u_x$：物体在静止参考系中所被观测到的运动速度。</li>
+                            </ul>
+                        </li>
+                        <li><strong>物理意义</strong>：在相对论框架下，速度的叠加不再是伽利略变换下的简单相加。无论这两个相对速度有多大，最终叠加所得的观测速度都绝对**不会超过光速 $c$**，保证了光速是宇宙的终极速度极限。</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right">
+                    <div class="relativity-lab">
+                        <div class="lab-title">相对论速度叠加计算器</div>
+                        <div class="vel-adder">
+                            <div class="vel-inputs">
+                                <div class="col">
+                                    <label>参考系速度 v</label>
+                                    <input type="range" id="vel-v-input" min="0" max="0.99" step="0.01" value="0.5">
+                                    <span class="value-display" id="vel-v-val" style="font-size:0.8rem;text-align:center;">0.50 c</span>
+                                </div>
+                                <div class="col">
+                                    <label>物体速度 u'</label>
+                                    <input type="range" id="vel-u-input" min="0" max="0.99" step="0.01" value="0.5">
+                                    <span class="value-display" id="vel-u-val" style="font-size:0.8rem;text-align:center;">0.50 c</span>
+                                </div>
+                            </div>
+                            <div class="vel-result">
+                                <div class="label">经典叠加理论 (u + v)</div>
+                                <div class="val" id="vel-classic-res" style="color:var(--accent-red); margin-bottom:5px;">1.00 c</div>
+                                <div class="label">相对论叠加结果 (u_x)</div>
+                                <div class="val" id="vel-rel-res">0.8000 c</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide" data-title="五、质能关系">
+            <div class="slide-header">
+                <h1>五、质能关系</h1>
+                <div class="slide-number">Slide 7 / 8</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>静止能量 (Rest Energy)</strong>：
+                            \[ E_0 = m_0 c^2 \]
+                            当物体静止时，其自身质量所蕴含的固有能量。
+                        </li>
+                        <li><strong>总能量 (Total Energy)</strong>：
+                            \[ E = \gamma m_0 c^2 = mc^2 \]
+                            其中 $m = \gamma m_0$ 称为相对论质量。随速度增加，物体的惯性（质量）也会增大。
+                        </li>
+                        <li><strong>相对论动能 (Kinetic Energy)</strong>：
+                            \[ E_k = E - E_0 = (\gamma - 1)m_0 c^2 \]
+                            当速度 $v \ll c$ 时，泰勒级数展开后可还原为经典力学动能通式 $\frac{1}{2}m_0 v^2$。
+                        </li>
+                        <li><strong>质能等价原理</strong>：质量即能量的凝聚态，质量的微小亏损可以释放惊人的巨大能量（如原子弹、核聚变）。</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right">
+                    <div class="relativity-lab">
+                        <div class="lab-title">质量与动能随速度增长</div>
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <span>速度 (v)</span>
+                                <span class="val" id="vel-val-energy">0.00 c</span>
+                            </div>
+                            <input type="range" id="vel-slider-energy" min="0" max="0.99" step="0.01" value="0">
+                        </div>
+                        <div class="results-panel">
+                            <div class="res-box" style="grid-column: span 2;">
+                                <div class="label">相对论质量 (m = γ·m₀)</div>
+                                <div class="value" id="mass-val-energy" style="color: var(--accent-red);">1.000 m₀</div>
+                            </div>
+                            <div class="res-box">
+                                <div class="label">静能 (E₀)</div>
+                                <div class="value">1.000 m₀c²</div>
+                            </div>
+                            <div class="res-box">
+                                <div class="label">动能 (E_k)</div>
+                                <div class="value" id="ke-val-energy">0.000 m₀c²</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="slide" data-title="六、动量与能量关系">
+            <div class="slide-header">
+                <h1>六、动量与能量关系</h1>
+                <div class="slide-number">Slide 8 / 8</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>普适时空不变量公式</strong>：
+                            \[ E^2 = (pc)^2 + (m_0 c^2)^2 \]
+                            该方程是狭义相对论中极具地位的时空几何不变表达式。它将总能量 $E$、动量 $p$ 与静止能量 $m_0 c^2$ 直接关联。
+                        </li>
+                        <li><strong>符号定义</strong>：
+                            <ul>
+                                <li>$E$：粒子的总相对论能量。</li>
+                                <li>$p = \gamma m_0 v$：粒子的相对论动量。</li>
+                                <li>$m_0$：粒子的固有静止质量。</li>
+                            </ul>
+                        </li>
+                        <li><strong>无静质量粒子（如光子）</strong>：
+                            当粒子静质量 $m_0 = 0$ 时，公式退化为：
+                            \[ E = pc \]
+                            表明光子没有静质量，但依然携带着能量和动量。这也是太阳帆飞船以及辐射压的底层物理原理。
+                        </li>
+                    </ul>
+                </div>
+                <div class="slide-content-right" style="flex-direction:column; justify-content:center; gap: 15px;">
+                    <div style="background: rgba(0, 240, 255, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(0, 240, 255, 0.2); width:100%;">
+                        <div style="font-weight:bold; color:var(--accent-cyan); margin-bottom:5px;">四维矢量不变性</div>
+                        在四维时空中，相对论动能和三维动量组成了一个四维能量-动量矢量，而这个四维矢量的模平方就是 $m_0^2 c^4$。在一切坐标变换下保持恒定。
+                    </div>
+                    <div style="background: rgba(255, 200, 59, 0.05); padding: 15px; border-radius: 8px; border: 1px solid rgba(255, 200, 59, 0.2); width:100%;">
+                        <div style="font-weight:bold; color:var(--accent-yellow); margin-bottom:5px;">极高能物理应用</div>
+                        在现代粒子对撞机或高能宇宙射线分析中，当粒子速度极快致使其动能远超静能时，常利用极限近似：
+                        \[ E \approx pc \]
+                        来大幅度简化复杂的动量守恒分析方程。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button class="btn" id="prev-btn" disabled>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            上一页
+        </button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <button class="btn" id="next-btn">
+            下一页
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+    </div>
+    
+    <div class="kbd-hint">使用键盘左右方向键 <span class="kbd">←</span> <span class="kbd">→</span> 可以快速切换幻灯片</div>
+</div>
+
+<script>
+// Slide Navigation Logic
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const progressBar = document.getElementById('progress-bar');
+const navList = document.getElementById('nav-list');
+
+let currentSlideIdx = 0;
+
+// Initialize sidebar items
+slides.forEach((slide, idx) => {
+    const title = slide.getAttribute('data-title');
+    const li = document.createElement('li');
+    li.className = `nav-item ${idx === 0 ? 'active' : ''}`;
+    li.textContent = `${idx + 1}. ${title}`;
+    li.addEventListener('click', () => {
+        goToSlide(idx);
+    });
+    navList.appendChild(li);
+});
+
+const navItems = document.querySelectorAll('.nav-item');
+
+function updateControls() {
+    prevBtn.disabled = currentSlideIdx === 0;
+    nextBtn.disabled = currentSlideIdx === slides.length - 1;
+    
+    const progressPercent = ((currentSlideIdx + 1) / slides.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+    
+    navItems.forEach((item, idx) => {
+        if (idx === currentSlideIdx) {
+            item.classList.add('active');
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+function goToSlide(index) {
+    if (index < 0 || index >= slides.length) return;
+    
+    slides[currentSlideIdx].classList.remove('active');
+    currentSlideIdx = index;
+    slides[currentSlideIdx].classList.add('active');
+    
+    updateControls();
+    
+    // Trigger animations or sync slider widgets
+    if (currentSlideIdx === 3) {
+        initClockAnim();
+    } else if (currentSlideIdx === 4) {
+        initRocketAnim();
+    }
+}
+
+prevBtn.addEventListener('click', () => {
+    goToSlide(currentSlideIdx - 1);
+});
+
+nextBtn.addEventListener('click', () => {
+    goToSlide(currentSlideIdx + 1);
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        goToSlide(currentSlideIdx - 1);
+    } else if (e.key === 'ArrowRight') {
+        goToSlide(currentSlideIdx + 1);
+    }
+});
+
+// Helper: Calculate Lorentz Factor
+function calcGamma(v) {
+    if (v >= 1) return Infinity;
+    return 1 / Math.sqrt(1 - v * v);
+}
+
+// Slide 3: Lorentz Factor Calculator Lab
+const velSliderLab = document.getElementById('vel-slider-lab');
+const velValLab = document.getElementById('vel-val-lab');
+const gammaValLab = document.getElementById('gamma-val-lab');
+const pctValLab = document.getElementById('pct-val-lab');
+
+velSliderLab.oninput = function() {
+    const v = parseFloat(this.value);
+    velValLab.textContent = `${v.toFixed(3)} c`;
+    const gamma = calcGamma(v);
+    gammaValLab.textContent = gamma === Infinity ? '∞' : gamma.toFixed(4);
+    pctValLab.textContent = `${(v * 100).toFixed(1)} %`;
+};
+
+// Slide 4: Time Dilation Lab
+let clockAnimId;
+let staticAngle = 0;
+let movingAngle = 0;
+
+function initClockAnim() {
+    const velSliderClock = document.getElementById('vel-slider-clock');
+    const velValClock = document.getElementById('vel-val-clock');
+    const movingLabel = document.getElementById('moving-clock-label');
+    const handStatic = document.getElementById('clock-hand-static');
+    const handMoving = document.getElementById('clock-hand-moving');
+    
+    function updateClockValues() {
+        const v = parseFloat(velSliderClock.value);
+        velValClock.textContent = `${v.toFixed(2)} c`;
+        const gamma = calcGamma(v);
+        movingLabel.textContent = `运动钟表 (γ = ${gamma.toFixed(2)})`;
+    }
+    
+    velSliderClock.oninput = updateClockValues;
+    updateClockValues();
+    
+    cancelAnimationFrame(clockAnimId);
+    
+    function tick() {
+        if (currentSlideIdx !== 3) return;
+        
+        const v = parseFloat(velSliderClock.value);
+        const gamma = calcGamma(v);
+        
+        // Stationary clock ticks at normal speed
+        staticAngle += 1.5; // deg per frame
+        
+        // Moving clock ticks slower by 1 / gamma
+        movingAngle += 1.5 / gamma;
+        
+        handStatic.style.transform = `rotate(${staticAngle}deg)`;
+        handMoving.style.transform = `rotate(${movingAngle}deg)`;
+        
+        clockAnimId = requestAnimationFrame(tick);
+    }
+    
+    tick();
+}
+
+// Slide 5: Length Contraction Lab
+function initRocketAnim() {
+    const velSliderRocket = document.getElementById('vel-slider-rocket');
+    const velValRocket = document.getElementById('vel-val-rocket');
+    const rocketLenVal = document.getElementById('rocket-len-val');
+    const rocketGraphic = document.getElementById('rocket-graphic');
+    const starsBg = document.getElementById('stars-bg');
+    
+    function updateRocketValues() {
+        const v = parseFloat(velSliderRocket.value);
+        velValRocket.textContent = `${v.toFixed(2)} c`;
+        const gamma = calcGamma(v);
+        
+        // Contract length (width in scaleX)
+        const scaleX = 1 / gamma;
+        rocketGraphic.style.transform = `scaleX(${scaleX})`;
+        rocketLenVal.textContent = `${(scaleX * 100).toFixed(1)}% (L₀ = 160px, L = ${(160 * scaleX).toFixed(1)}px)`;
+        
+        // Speed up background stars depending on velocity
+        const duration = v === 0 ? 0 : 4 / (v * 3 + 1); // speed animation
+        if (v === 0) {
+            starsBg.style.animation = 'none';
+        } else {
+            starsBg.style.animation = `slideStars ${duration}s linear infinite`;
+        }
+    }
+    
+    velSliderRocket.oninput = updateRocketValues;
+    updateRocketValues();
+}
+
+// Slide 6: Velocity Addition Lab
+const velVInput = document.getElementById('vel-v-input');
+const velUInput = document.getElementById('vel-u-input');
+const velVVal = document.getElementById('vel-v-val');
+const velUVal = document.getElementById('vel-u-val');
+const velClassicRes = document.getElementById('vel-classic-res');
+const velRelRes = document.getElementById('vel-rel-res');
+
+function updateVelAddition() {
+    const v = parseFloat(velVInput.value);
+    const u = parseFloat(velUInput.value);
+    
+    velVVal.textContent = `${v.toFixed(2)} c`;
+    velUVal.textContent = `${u.toFixed(2)} c`;
+    
+    // Classic addition u + v
+    const classicSum = v + u;
+    velClassicRes.textContent = `${classicSum.toFixed(2)} c`;
+    
+    // Relativistic addition (u + v) / (1 + u*v/c^2)
+    const relSum = (u + v) / (1 + u * v);
+    velRelRes.textContent = `${relSum.toFixed(4)} c`;
+}
+
+velVInput.oninput = updateVelAddition;
+velUInput.oninput = updateVelAddition;
+updateVelAddition();
+
+// Slide 7: Relativistic Energy Lab
+const velSliderEnergy = document.getElementById('vel-slider-energy');
+const velValEnergy = document.getElementById('vel-val-energy');
+const massValEnergy = document.getElementById('mass-val-energy');
+const keValEnergy = document.getElementById('ke-val-energy');
+
+velSliderEnergy.oninput = function() {
+    const v = parseFloat(this.value);
+    velValEnergy.textContent = `${v.toFixed(2)} c`;
+    const gamma = calcGamma(v);
+    
+    massValEnergy.textContent = `${gamma.toFixed(3)} m₀`;
+    
+    const ke = gamma - 1;
+    keValEnergy.textContent = `${ke.toFixed(3)} m₀c²`;
+};
+
+// Start default simulation
+window.onload = () => {
+    updateControls();
+};
+</script>
+</body>
+</html>

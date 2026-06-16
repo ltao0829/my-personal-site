@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>引力红移与蓝移科普PPT - 交互演示版</title>
+<!-- MathJax for rendering equations -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root {
+    --bg-color: #0b0c10;
+    --card-bg: rgba(31, 40, 51, 0.45);
+    --card-border: rgba(102, 252, 241, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #c5a1ff;
+    --accent-blue: #66fcf1;
+    --accent-red: #ff4a5a;
+    --accent-purple: #8f5fe8;
+    --font-sans: 'PingFang SC', 'Microsoft YaHei', -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(143, 95, 232, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(102, 252, 225, 0.12) 0%, transparent 45%),
+        radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 280px;
+    background: rgba(11, 12, 16, 0.85);
+    border-right: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 15px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.nav-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-item:hover {
+    background: rgba(102, 252, 241, 0.05);
+    border-color: rgba(102, 252, 241, 0.3);
+    color: var(--text-primary);
+    transform: translateX(5px);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, rgba(143, 95, 232, 0.2) 0%, rgba(102, 252, 241, 0.1) 100%);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.1);
+}
+
+/* Main Display Area */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 40px;
+}
+
+/* Slides Container */
+.slides-container {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    max-width: 950px;
+    height: 100%;
+    max-height: 620px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255,255,255,0.02);
+    backdrop-filter: blur(20px);
+    overflow-y: auto;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+}
+
+/* Slide Elements Style */
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.slide-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide-number {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.slide-body {
+    flex-grow: 1;
+    display: flex;
+    gap: 30px;
+}
+
+.slide-content-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    min-height: 250px;
+}
+
+/* Bullet list styling */
+.bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bullet-list li {
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 5px;
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    top: -2px;
+}
+
+.bullet-list li strong {
+    color: var(--accent-blue);
+}
+
+.bullet-list li.redshift::before {
+    color: var(--accent-red);
+}
+.bullet-list li.redshift strong {
+    color: var(--accent-red);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    max-width: 950px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background: var(--accent-blue);
+    color: var(--bg-color);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.progress-container {
+    flex-grow: 1;
+    margin: 0 30px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
+    transition: width 0.3s ease;
+}
+
+/* Interactive Demos */
+.interactive-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Wave Simulator */
+#wave-canvas {
+    width: 100%;
+    height: 180px;
+    background: #050608;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.control-panel {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.control-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-group:last-child {
+    margin-bottom: 0;
+}
+
+.control-group label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.control-group input[type="range"] {
+    flex-grow: 1;
+    margin: 0 15px;
+    accent-color: var(--accent-blue);
+}
+
+.value-display {
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--accent-blue);
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Gravity redshift/blueshift animation demo */
+.space-demo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: radial-gradient(circle at 10% 50%, #1a0b2e 0%, #050608 70%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffea85 20%, #ff5e00 70%, transparent 100%);
+    box-shadow: 0 0 40px rgba(255, 94, 0, 0.6);
+    z-index: 2;
+}
+
+.star.blackhole {
+    background: radial-gradient(circle, #000 40%, #8f5fe8 70%, transparent 100%);
+    box-shadow: 0 0 50px rgba(143, 95, 232, 0.8);
+}
+
+.star-label {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 0.75rem;
+    color: var(--accent-purple);
+}
+
+.gravity-wave-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Comparison Dashboard Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.dash-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dash-card:hover {
+    border-color: var(--accent-purple);
+    background: rgba(143, 95, 232, 0.05);
+    transform: translateY(-2px);
+}
+
+.dash-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dash-card.card-redshift h3 { color: var(--accent-red); }
+.dash-card.card-blueshift h3 { color: var(--accent-blue); }
+.dash-card.card-doppler h3 { color: var(--accent-purple); }
+.dash-card.card-cosmology h3 { color: #ffbc42; }
+
+.dash-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.7);
+}
+
+.dash-card .badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+}
+
+/* Keyboard hint */
+.kbd-hint {
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+.kbd {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <a href="../blog.html" style="color: var(--accent-blue); text-decoration: none; margin-bottom: 20px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">← 返回博客列表</a>
+    <h2>幻灯片目录</h2>
+    <ul class="nav-list" id="nav-list">
+        <!-- populated dynamically -->
+    </ul>
+</div>
+
+<div class="main-content">
+    <div class="slides-container">
+        
+        <!-- Slide 1 -->
+        <div class="slide active" data-title="核心公式：波速、频率与波长">
+            <div class="slide-header">
+                <h1>核心公式：波速、频率与波长</h1>
+                <div class="slide-number">Slide 1 / 6</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>核心公式</strong>：
+                            \[ c = \lambda \cdot f \]
+                        </li>
+                        <li><strong>符号解释</strong>：
+                            <ul>
+                                <li>$c$ (波速)：真空光速恒定，约为 $3 \times 10^8 \text{ m/s}$</li>
+                                <li>$\lambda$ (波长)：波源振动一个周期内传播的距离</li>
+                                <li>$f$ (频率)：单位时间内完成周期性振动的次数</li>
+                            </ul>
+                        </li>
+                        <li><strong>变形公式</strong>：
+                            \[ \lambda = \frac{c}{f} \quad \text{与} \quad f = \frac{c}{\lambda} \]
+                        </li>
+                        <li><strong>核心结论</strong>：波速 $c$ 保持不变时，波长与频率成<strong>反比</strong>。波长越长，频率越低；波长越短，频率越高。</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right">
+                    <div class="interactive-container">
+                        <canvas id="wave-canvas"></canvas>
+                        <div class="control-panel">
+                            <div class="control-group">
+                                <label>频率 (f)</label>
+                                <input type="range" id="freq-slider" min="1" max="10" step="0.1" value="3">
+                                <span class="value-display" id="freq-val">3.0 Hz</span>
+                            </div>
+                            <div class="control-group">
+                                <label>波长 (\(\lambda\))</label>
+                                <input type="range" id="wave-slider" min="20" max="150" step="1" value="100">
+                                <span class="value-display" id="wave-val">100 px</span>
+                            </div>
+                            <div class="control-group">
+                                <label style="font-weight: bold; color: white;">波速 (c = \(\lambda \cdot f\))</label>
+                                <span class="value-display" id="speed-val" style="color: var(--accent-blue);">300 px/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" data-title="核心现象与物理直觉">
+            <div class="slide-header">
+                <h1>核心现象与物理直觉</h1>
+                <div class="slide-number">Slide 2 / 6</div>
+            </div>
+            <div class="slide-body" style="flex-direction: column; justify-content: space-around;">
+                <ul class="bullet-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <li class="redshift" style="background: rgba(255, 74, 90, 0.05); padding: 15px; border-radius: 8px; border: 1px dashed rgba(255, 74, 90, 0.2);">
+                        <strong>引力红移 (Gravitational Redshift)</strong><br><br>
+                        光从星球/黑洞附近往外跑 $\rightarrow$ <strong>克服引力做功</strong> $\rightarrow$ 损失能量 $\rightarrow$ 频率变低 $\rightarrow$ 波长变长 $\rightarrow$ 光谱向红色端偏移（变红）。
+                    </li>
+                    <li style="background: rgba(102, 252, 241, 0.05); padding: 15px; border-radius: 8px; border: 1px dashed rgba(102, 252, 241, 0.2);">
+                        <strong>引力蓝移 (Gravitational Blueshift)</strong><br><br>
+                        光从远处往星球/黑洞附近掉落 $\rightarrow$ <strong>被引力拉着往下冲</strong> $\rightarrow$ 能量增加 $\rightarrow$ 频率变高 $\rightarrow$ 波长变短 $\rightarrow$ 光谱向蓝色端偏移（变蓝）。
+                    </li>
+                </ul>
+                <div style="background: rgba(143, 95, 232, 0.08); padding: 15px; border-radius: 8px; border: 1px solid rgba(143, 95, 232, 0.2); text-align: center; font-size: 1.1rem;">
+                    💡 <strong>引力与时间的底层联系</strong>：根据广义相对论，<strong>引力场越强的地方，时间流逝得越慢</strong>。这也是引力红移在时空几何上的本质表现。
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" data-title="引力红移：光的“登山”之旅">
+            <div class="slide-header">
+                <h1>引力红移：光的“登山”之旅</h1>
+                <div class="slide-number">Slide 3 / 6</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>通俗解释：光的“登山”过程</strong><br>光从强引力天体（如恒星、黑洞）向外传播时，如同登山者克服重力做功，必须消耗自身的能量。由于光速恒定，能量的损失直接导致频率降低、波长拉伸，颜色偏向红端。</li>
+                        <li><strong>核心原因：能量的引力损耗</strong><br>光的能量公式为 $E = hf$（$h$ 为普朗克常数）。在逃离引力场时，光子的电磁场能量转化为了引力势能，导致 $E$ 降低，因此频率 $f$ 必须减小。</li>
+                        <li><strong>观测实例：太阳与白矮星</strong><br>来自太阳的光以及天狼星B（致密白矮星）发出的光谱，在穿越时空到达地球被接收时，均能检测到清晰可测的引力红移。</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right" style="background: none; border: none; padding: 0;">
+                    <div class="space-demo">
+                        <div class="star"></div>
+                        <div class="star-label">恒星 / 强引力源</div>
+                        <canvas id="redshift-canvas" class="gravity-wave-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" data-title="引力蓝移：光的“坠落”之旅">
+            <div class="slide-header">
+                <h1>引力蓝移：光的“坠落”之旅</h1>
+                <div class="slide-number">Slide 4 / 6</div>
+            </div>
+            <div class="slide-body">
+                <div class="slide-content-left">
+                    <ul class="bullet-list">
+                        <li><strong>通俗解释：光的“坠落”加速</strong><br>当光从引力较弱的太空射向引力较强的地球时，它就如同一个从高处坠落的物体。引力场对其施加“拉力”，光子获得能量增益，导致频率上升、波长变短，向光谱蓝端偏移。</li>
+                        <li><strong>核心原因：能量的引力增益</strong><br>当光子沿着引力势梯度向下传播时，它获得了额外的势能转换，引起能量 $E$ 的增加。根据 $E = hf$，频率 $f$ 随之增加。</li>
+                        <li><strong>现实应用：GPS 定位修正</strong><br>GPS 导航卫星运行在距地面约 2 万公里的太空（弱引力区）。卫星向地面接收端（强引力区）发送的信号会发生引力蓝移。如果不对引力引起的时钟偏差 and 蓝移进行修正，GPS 每天会积累超过 11 公里的定位误差！</li>
+                    </ul>
+                </div>
+                <div class="slide-content-right" style="background: none; border: none; padding: 0;">
+                    <div class="space-demo" style="background: radial-gradient(circle at 90% 50%, #1a2c4e 0%, #050608 70%);">
+                        <div class="star" style="left: auto; right: 20px; background: radial-gradient(circle, #8bc34a 20%, #009688 70%, transparent 100%); box-shadow: 0 0 40px rgba(0, 150, 136, 0.6);"></div>
+                        <div class="star-label" style="left: auto; right: 10px;">地球 / 强引力接收端</div>
+                        <canvas id="blueshift-canvas" class="gravity-wave-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide" data-title="总结与对比：四大红移效应">
+            <div class="slide-header">
+                <h1>总结与对比：四大红移效应</h1>
+                <div class="slide-number">Slide 5 / 6</div>
+            </div>
+            <div class="slide-body" style="flex-direction: column;">
+                <div class="dashboard-grid">
+                    <div class="dash-card card-redshift">
+                        <h3>引力红移</h3>
+                        <span class="badge">广义相对论</span>
+                        <p><strong>成因</strong>：光在逃离强引力场过程中克服重力做功导致能量损失。</p>
+                        <p><strong>特征</strong>：波长拉伸，频率降低。典型例子为太阳或白矮星发出的光谱到达地球。</p>
+                    </div>
+                    <div class="dash-card card-blueshift">
+                        <h3>引力蓝移</h3>
+                        <span class="badge">广义相对论</span>
+                        <p><strong>成因</strong>：光向强引力场下落过程中获得引力增益，能量增加。</p>
+                        <p><strong>特征</strong>：波长变短，频率升高。典型例子为太空GPS卫星信号传回地球表面。</p>
+                    </div>
+                    <div class="dash-card card-doppler">
+                        <h3>多普勒效应</h3>
+                        <span class="badge">经典力学 / 狭义相对论</span>
+                        <p><strong>成因</strong>：光源与观察者之间的相对运动导致的波的压缩或拉伸。</p>
+                        <p><strong>特征</strong>：相向运动导致蓝移，背向运动导致红移。典型例子为恒星径向运动或警车鸣笛声。</p>
+                    </div>
+                    <div class="dash-card card-cosmology">
+                        <h3>宇宙学红移</h3>
+                        <span class="badge">宇宙学</span>
+                        <p><strong>成因</strong>：宇宙空间本身膨胀拉伸了在其中传播的光波波长。</p>
+                        <p><strong>特征</strong>：与天体自身运动无关，距离越远红移越大。为宇宙膨胀（哈勃定律）的直接证据。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide" data-title="物理本质的深度总结">
+            <div class="slide-header">
+                <h1>物理本质的深度总结</h1>
+                <div class="slide-number">Slide 6 / 6</div>
+            </div>
+            <div class="slide-body" style="flex-direction: column; justify-content: center; gap: 20px;">
+                <ul class="bullet-list">
+                    <li><strong>引力红移/蓝移的物理本质</strong>：<br>是由引力场强弱引起的<strong>时空弯曲效应</strong>以及引力场对光能量的直接调控，核心由引力差和光的传播方向决定。</li>
+                    <li><strong>多普勒红移/蓝移的物理本质</strong>：<br>是由波源和观察者之间的**相对速度**决定，是对波空间分布的物理拉伸或压缩，不改变光子自身的固有结构。</li>
+                    <li><strong>宇宙学红移的物理本质</strong>：<br>是由**宇宙空间膨胀**导致的，光在时空中旅行得越久，被空间拉伸得就越厉害。</li>
+                    <li><strong>一切物理描述的基石</strong>：<br>最核心公式依然是 $c = \lambda \cdot f$。波速不变是物理前提，波长和频率的此消彼长是能量守恒在波谱上的直观写照。</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button class="btn" id="prev-btn" disabled>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            上一页
+        </button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <button class="btn" id="next-btn">
+            下一页
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+    </div>
+    
+    <div class="kbd-hint">使用键盘左右方向键 <span class="kbd">←</span> <span class="kbd">→</span> 可以快速切换幻灯片</div>
+</div>
+
+<script>
+// Slide Navigation Logic
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const progressBar = document.getElementById('progress-bar');
+const navList = document.getElementById('nav-list');
+
+let currentSlideIdx = 0;
+
+// Initialize sidebar items
+slides.forEach((slide, idx) => {
+    const title = slide.getAttribute('data-title');
+    const li = document.createElement('li');
+    li.className = `nav-item ${idx === 0 ? 'active' : ''}`;
+    li.textContent = `${idx + 1}. ${title}`;
+    li.addEventListener('click', () => {
+        goToSlide(idx);
+    });
+    navList.appendChild(li);
+});
+
+const navItems = document.querySelectorAll('.nav-item');
+
+function updateControls() {
+    prevBtn.disabled = currentSlideIdx === 0;
+    nextBtn.disabled = currentSlideIdx === slides.length - 1;
+    
+    const progressPercent = ((currentSlideIdx + 1) / slides.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+    
+    navItems.forEach((item, idx) => {
+        if (idx === currentSlideIdx) {
+            item.classList.add('active');
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            item.classList.remove('active');
+        }
+    });
+}
+
+function goToSlide(index) {
+    if (index < 0 || index >= slides.length) return;
+    
+    slides[currentSlideIdx].classList.remove('active');
+    currentSlideIdx = index;
+    slides[currentSlideIdx].classList.add('active');
+    
+    updateControls();
+    
+    // Trigger canvas animation restarts or state updates if needed
+    if (currentSlideIdx === 0) {
+        initWaveSim();
+    } else if (currentSlideIdx === 2) {
+        startGravityAnim('redshift');
+    } else if (currentSlideIdx === 3) {
+        startGravityAnim('blueshift');
+    }
+}
+
+prevBtn.addEventListener('click', () => {
+    goToSlide(currentSlideIdx - 1);
+});
+
+nextBtn.addEventListener('click', () => {
+    goToSlide(currentSlideIdx + 1);
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        goToSlide(currentSlideIdx - 1);
+    } else if (e.key === 'ArrowRight') {
+        goToSlide(currentSlideIdx + 1);
+    }
+});
+
+// Slide 1: Wave Simulator Logic
+let waveCanvas, waveCtx, animationFrameId;
+let waveFreq = 3.0; // Hz
+let waveLength = 100; // px
+let wavePhase = 0;
+
+function initWaveSim() {
+    waveCanvas = document.getElementById('wave-canvas');
+    if (!waveCanvas) return;
+    
+    // Handle retina display crispness
+    const rect = waveCanvas.getBoundingClientRect();
+    waveCanvas.width = rect.width;
+    waveCanvas.height = rect.height;
+    waveCtx = waveCanvas.getContext('2d');
+    
+    // Sliders
+    const freqSlider = document.getElementById('freq-slider');
+    const waveSlider = document.getElementById('wave-slider');
+    const freqVal = document.getElementById('freq-val');
+    const waveVal = document.getElementById('wave-val');
+    const speedVal = document.getElementById('speed-val');
+    
+    function updateWaveValues() {
+        waveFreq = parseFloat(freqSlider.value);
+        waveLength = parseFloat(waveSlider.value);
+        
+        freqVal.textContent = `${waveFreq.toFixed(1)} Hz`;
+        waveVal.textContent = `${waveLength.toFixed(0)} px`;
+        
+        const speed = waveFreq * waveLength;
+        speedVal.textContent = `${speed.toFixed(0)} px/s`;
+    }
+    
+    freqSlider.oninput = updateWaveValues;
+    waveSlider.oninput = updateWaveValues;
+    updateWaveValues();
+    
+    cancelAnimationFrame(animationFrameId);
+    animateWave();
+}
+
+function animateWave() {
+    if (!waveCtx || currentSlideIdx !== 0) return;
+    
+    const w = waveCanvas.width;
+    const h = waveCanvas.height;
+    
+    waveCtx.clearRect(0, 0, w, h);
+    
+    // Draw grid lines
+    waveCtx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+    waveCtx.lineWidth = 1;
+    for (let x = 0; x < w; x += 40) {
+        waveCtx.beginPath();
+        waveCtx.moveTo(x, 0);
+        waveCtx.lineTo(x, h);
+        waveCtx.stroke();
+    }
+    
+    // Draw center line
+    waveCtx.beginPath();
+    waveCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+    waveCtx.moveTo(0, h/2);
+    waveCtx.lineTo(w, h/2);
+    waveCtx.stroke();
+    
+    // Draw the sine wave
+    waveCtx.beginPath();
+    waveCtx.strokeStyle = '#66fcf1';
+    waveCtx.lineWidth = 3;
+    waveCtx.shadowColor = '#66fcf1';
+    waveCtx.shadowBlur = 10;
+    
+    const amplitude = 40;
+    for (let x = 0; x < w; x++) {
+        // y = A * sin(kx - wt)
+        // k = 2*pi/lambda, w = 2*pi*f
+        const angle = (x / waveLength) * Math.PI * 2 - wavePhase;
+        const y = h / 2 + Math.sin(angle) * amplitude;
+        if (x === 0) {
+            waveCtx.moveTo(x, y);
+        } else {
+            waveCtx.lineTo(x, y);
+        }
+    }
+    waveCtx.stroke();
+    waveCtx.shadowBlur = 0; // reset shadow
+    
+    // Phase speed: phase shifts by angular frequency times dt
+    wavePhase += (waveFreq * 0.05); // Speed multiplier
+    
+    animationFrameId = requestAnimationFrame(animateWave);
+}
+
+// Slides 3 & 4: Gravity Photon Animation
+let gravityAnimId;
+function startGravityAnim(mode) {
+    cancelAnimationFrame(gravityAnimId);
+    
+    const canvasId = mode === 'redshift' ? 'redshift-canvas' : 'blueshift-canvas';
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    
+    const rect = canvas.parentNode.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+    
+    const ctx = canvas.getContext('2d');
+    let photonX = mode === 'redshift' ? 80 : canvas.width - 80;
+    let phase = 0;
+    
+    function draw() {
+        if (currentSlideIdx !== (mode === 'redshift' ? 2 : 3)) return;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        const w = canvas.width;
+        const h = canvas.height;
+        
+        // Draw photon wave packet
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        
+        const packetWidth = 120;
+        const halfPacket = packetWidth / 2;
+        
+        // Calculate parameters based on distance from gravity source (x = 40 is star center for redshift, x = w-40 is earth center for blueshift)
+        for (let dx = -halfPacket; dx < halfPacket; dx++) {
+            const x = photonX + dx;
+            if (x < 0 || x > w) continue;
+            
+            // Envelope shape (gaussian-like window)
+            const envelope = Math.exp(-Math.pow(dx / (packetWidth / 4), 2));
+            
+            let lambda, hue;
+            
+            if (mode === 'redshift') {
+                // Redshift: wave stretches (wavelength gets larger) as it goes right
+                const distRatio = (x - 80) / (w - 160); // 0 near star, 1 at right edge
+                const clampedRatio = Math.max(0, Math.min(1, distRatio));
+                lambda = 15 + clampedRatio * 25; // 15px to 40px
+                hue = 240 - clampedRatio * 240; // Blue (240) to Red (0)
+            } else {
+                // Blueshift: wave compresses (wavelength gets smaller) as it goes right towards earth
+                const distRatio = x / w; // 0 at left, 1 near earth (right)
+                const clampedRatio = Math.max(0, Math.min(1, distRatio));
+                lambda = 35 - clampedRatio * 20; // 35px to 15px
+                hue = clampedRatio * 200; // Red (0) to Blue-Green (200)
+            }
+            
+            const y = h / 2 + Math.sin((dx / lambda) * Math.PI * 2 - phase) * 30 * envelope;
+            
+            ctx.strokeStyle = `hsla(${hue}, 100%, 65%, ${envelope})`;
+            ctx.shadowColor = `hsl(${hue}, 100%, 65%)`;
+            ctx.shadowBlur = 5 * envelope;
+            
+            if (dx === -halfPacket) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0; // reset
+        
+        // Move photon
+        if (mode === 'redshift') {
+            photonX += 1.8;
+            if (photonX > w + halfPacket) photonX = 80;
+        } else {
+            photonX -= 1.8;
+            if (photonX < -halfPacket) photonX = w - 80;
+        }
+        
+        phase += 0.2;
+        gravityAnimId = requestAnimationFrame(draw);
+    }
+    
+    draw();
+}
+
+// Initial triggers
+window.onload = () => {
+    updateControls();
+    initWaveSim();
+};
+
+window.addEventListener('resize', () => {
+    if (currentSlideIdx === 0) initWaveSim();
+    if (currentSlideIdx === 2) startGravityAnim('redshift');
+    if (currentSlideIdx === 3) startGravityAnim('blueshift');
+});
+</script>
+</body>
+</html>
