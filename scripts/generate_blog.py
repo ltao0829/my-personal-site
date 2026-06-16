@@ -179,7 +179,7 @@ def update_files(title, description, content, index_str):
         template_content = f.read()
         
     html_content = template_content
-    html_content = html_content.replace("<title>文章标题 - LiuTao</title>", f"<title>{title} - LiuTao</title>")
+    html_content = html_content.replace("<title>文章标题 - Mazi</title>", f"<title>{title} - Mazi</title>")
     html_content = html_content.replace('content="这里是文章的简短描述或摘要。"', f'content="{description}"')
     html_content = html_content.replace('<p class="eyebrow">发布于 2026-05-20</p>', f'<p class="eyebrow">发布于 {html_date}</p>')
     html_content = html_content.replace('<h1>文章标题</h1>', f'<h1>{title}</h1>')

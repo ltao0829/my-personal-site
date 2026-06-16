@@ -10,7 +10,7 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>LiuTao - 个人主页</title>
+  <title>Mazi - 个人主页</title>
   <meta name="description" content="这是你的个人主页，介绍你是谁，以及你的博客内容。" />
 
   <link rel="stylesheet" href="css/styles.css" />
@@ -18,7 +18,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="site-title" href="index.html">LiuTao</a>
+      <a class="site-title" href="index.html">Mazi</a>
 
       <nav class="site-nav" aria-label="主导航">
         <a href="index.html" aria-current="page">首页</a>
@@ -32,10 +32,10 @@
   <main class="container">
     <section class="hero">
       <div class="avatar-container">
-        <img src="images/avatar.png" alt="LiuTao's Avatar" class="avatar">
+        <img src="images/avatar.png" alt="Mazi's Avatar" class="avatar">
       </div>
       <p class="eyebrow">你好，我是</p>
-      <h1>LiuTao</h1>
+      <h1>Mazi</h1>
       <p class="hero-text">
         我关注技术、创作、生活方式与长期主义。这里是我的个人主页，
         也是我整理博客内容的地方。
@@ -82,14 +82,24 @@
         <a href="blog.html">进入博客列表 →</a>
       </p>
     </section>
+
+    <!-- 留言板 -->
+    <section class="section">
+      <div class="quiet-box" style="padding: 32px 36px;">
+        <h2 style="margin-top: 0;">💬 留言板</h2>
+        <p class="muted" style="margin-bottom: 28px;">欢迎留下你的足迹！所有留言将通过快捷审核后公开在此处。</p>
+        <div id="comments-container" data-page-id="homepage-guestbook" data-page-title="Mazi 的留言板"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> LiuTao. All rights reserved.</p>
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/comments.js" defer></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
       hint.style.color = "var(--muted)";
       hint.style.fontSize = "0.95rem";
       hint.innerHTML = `
-        <p style="margin: 0 0 8px 0; font-weight: 600; color: var(--text);">💬 评论区配置提示</p>
+        <p style="margin: 0 0 8px 0; font-weight: 600; color: var(--text);">💬 留言板配置提示</p>
         <p style="margin: 0 0 12px 0; font-size: 0.85rem; line-height: 1.5;">
           留言系统已准备就绪！请在本地项目文件 <code>js/comments.js</code> 中配置你的 <code>appId</code>。
         </p>
@@ -47,11 +47,14 @@
     threadDiv.setAttribute("data-host", CUSDIS_CONFIG.host);
     threadDiv.setAttribute("data-app-id", CUSDIS_CONFIG.appId);
     
-    // 自动派生当前页面的唯一 ID、链接与标题
-    const pageId = window.location.pathname;
+    // 自动派生当前页面的唯一 ID、链接与标题（优先使用容器上已配好的自定义属性）
+    const pageId = container.getAttribute("data-page-id") || window.location.pathname;
+    const pageUrl = container.getAttribute("data-page-url") || window.location.href;
+    const pageTitle = container.getAttribute("data-page-title") || document.title;
+    
     threadDiv.setAttribute("data-page-id", pageId);
-    threadDiv.setAttribute("data-page-url", window.location.href);
-    threadDiv.setAttribute("data-page-title", document.title);
+    threadDiv.setAttribute("data-page-url", pageUrl);
+    threadDiv.setAttribute("data-page-title", pageTitle);
 
     // 获取并设置当前生效的主题
     const currentTheme = document.documentElement.getAttribute("data-theme") || "light";

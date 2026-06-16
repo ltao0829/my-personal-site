@@ -182,20 +182,24 @@ p {
   padding: 0 18px;
   border-radius: 999px;
   background: var(--text);
-  color: #ffffff;
+  color: var(--bg);
   font-weight: 600;
   border: 1px solid var(--text);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .button:hover {
   text-decoration: none;
-  background: #111827;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
 }
 
 .button-secondary {
   background: transparent;
   color: var(--text);
   border-color: var(--border);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .button-secondary:hover {

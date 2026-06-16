@@ -1,4 +1,4 @@
-# 👋 你好，我是 LiuTao (ltao0829)
+# 👋 你好，我是 Mazi (ltao0829)
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&lines=关注技术、创作与长期主义;正在构建有温度的个人网站;Hello%2C+World!+Welcome+to+my+profile." alt="Typing SVG" />
@@ -11,7 +11,7 @@
 *   🌱 我正在持续学习和探索前端开发、自动化构建以及极简主义建站。
 *   🚀 关注长期价值、信息过滤与自我表达。
 *   ✍️ 我会定期在我的 [个人博客](https://ltao0829.github.io/my-personal-site/) 上记录对工作、学习和生活的思考。
-*   🐶 《恶搞之家》中 Brian Griffin 的忠实粉丝。
+*   🐶 《恶搞之家》的忠实粉丝。
 
 ---
 
@@ -36,7 +36,7 @@
   <table align="center">
     <tr>
       <td>
-        <img height="150" src="https://github-readme-stats.vercel.app/api?username=ltao0829&show_icons=true&theme=transparent&title_color=3b82f6&text_color=94a3b8&icon_color=3b82f6&bg_color=00000000&hide_border=true" alt="LiuTao's GitHub stats" />
+        <img height="150" src="https://github-readme-stats.vercel.app/api?username=ltao0829&show_icons=true&theme=transparent&title_color=3b82f6&text_color=94a3b8&icon_color=3b82f6&bg_color=00000000&hide_border=true" alt="Mazi's GitHub stats" />
       </td>
       <td>
         <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ltao0829&layout=compact&theme=transparent&title_color=3b82f6&text_color=94a3b8&bg_color=00000000&hide_border=true" alt="Top Langs" />
@@ -65,8 +65,7 @@
 ## 📫 联系我 / Contact Me
 
 *   🌍 个人主页: [ltao0829.github.io/my-personal-site/](https://ltao0829.github.io/my-personal-site/)
-*   ✉️ 电子邮箱: 你的邮箱（可以在编辑时修改）
+*   ✉️ 电子邮箱: ltao0829@gmail.com
 
-<p align="center">
-  图像素材与灵感来自：<i>Family Guy - Brian Griffin</i> 🐶
+
 </p>

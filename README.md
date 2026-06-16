@@ -1,4 +1,4 @@
-# 🌌 LiuTao's Personal Website & Blog
+# 🌌 Mazi's Personal Website & Blog
 
 [![GitHub Pages](https://img.shields.io/badge/Deployment-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://ltao0829.github.io/my-personal-site/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
