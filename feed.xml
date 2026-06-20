@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 19 Jun 2026 14:21:44 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 13:15:24 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                    <item>
+                                        <item>
+      <title>第 014 期：无声的自留地：在算法与点赞之外，重建个人网站的「非对称价值」</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/014.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/014.html</guid>
+      <pubDate>Sat, 20 Jun 2026 13:15:24 +0800</pubDate>
+      <description>在被算法、流量和点赞绑架的社交媒体时代，重建一个独立、安静的个人静态博客，不仅是技术上的极简实践，更是一场夺回数字主权与深度思考能力的个人革命。</description>
+    </item>
+    <item>
       <title>第 013 期：在信息洪流中，我们如何「耕耘」知识的数字花园？</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/013.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/013.html</guid>
