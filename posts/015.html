@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 015 期：代码的「半衰期」：如何在瞬息万变的技术潮汐中写出长寿软件 - Mazi</title>
+  <meta name="description" content="在前端框架一年一变、AI 生成代码泛滥的今天，我们如何通过原生、无依赖与极简主义的设计，对抗软件的自然衰变，写出能平稳运行十年的长寿代码？" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-06-21</p>
+      <h1>第 015 期：代码的「半衰期」：如何在瞬息万变的技术潮汐中写出长寿软件</h1>
+      <p>在前端框架一年一变、AI 生成代码泛滥的今天，我们如何通过原生、无依赖与极简主义的设计，对抗软件的自然衰变，写出能平稳运行十年的长寿代码？</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>在物理世界中，我们习惯于物品的磨损。一双鞋穿久了鞋底会磨平，一栋房子久未修缮会漏雨。但在数字世界里，代码作为一种无形的信息，理论上应该具有永恒的生命力。然而，任何有几年开发经验的人都会同意一个残酷的事实：<strong>软件死得比实体物品还要快。</strong></p><p>这种现象在行业中被称为“软件腐烂”（Software Rot）。你三年前写的一个精美项目，今天重新运行安装命令可能会弹出一万个报错；你为了某个炫酷效果引入的第三方库，可能早已停止维护。在瞬息万变的技术潮汐中，我们如何才能写出不被时间淘汰、能平稳运行十年的“长寿代码”？</p><h2>一、 依赖的诅咒：别把地基建在流沙上</h2><p>现代软件开发越来越像搭积木。我们习惯于通过引入庞大的依赖库来快速实现功能。一个简单的个人博客，可能背后站着成百上千个第三方包。这种“高效率”的背后，隐藏着巨大的安全与维护隐患。</p><p>每一次依赖的升级，都是对项目生命周期的一次无形折损。当其中一个底层库宣布弃用，或者引入了破坏性更新，你的整个项目就会陷入瘫痪。长期主义的开发者应当警惕这种“过度依赖”。在决定引入一个第三方库之前，不妨问自己三个问题：</p><ul><li>这个功能我能否用十行原生代码自己实现？</li><li>这个依赖的维护者是否有长期维护的信誉？</li><li>如果这个库明天消失，我的系统还能运行吗？</li></ul><p><strong>减少依赖，就是减少软件与外部世界的耦合度。</strong> 耦合度越低，软件抵抗外界变动的能力就越强，其半衰期也就越长。</p><h2>二、 拥抱标准：回归原生技术的韧性</h2><p>技术潮流如旋转木马，今天流行 A 框架，明天流行 B 框架，后天或许又是新的范式。然而，在这场无休止的军备竞赛之下，底层的 Web 标准却出奇地稳定。</p><p>一个写于 1996 年的纯 HTML 网页，在今天的最新浏览器里依然能够完美渲染，甚至排版都不会乱。这就是“标准”的力量。W3C 规范和 ECMAScript 标准在设计之初，就将“向后兼容”作为最高铁律。这意味着，越是接近原生的代码，其生命周期就越长。</p><p>因此，在构建个人项目或长期系统时，我们应该尽可能地回归原生：</p><ul><li>使用原生的 HTML5 语义化标签，而不是堆砌无意义的无语义容器。</li><li>使用现代原生 CSS（如 Flexbox、Grid、CSS 变量），减少对各种预处理器和重度样式框架的依赖。</li><li>使用原生 JavaScript 处理交互，许多曾经需要引入庞大框架才能实现的逻辑，如今原生 API 已经支持得非常好。</li></ul><h2>三、 减法美学：不写代码的艺术</h2><p>在极简主义者的眼中，最容易维护的代码，就是那些“根本不存在”的代码。每一次功能的增加，不仅意味着开发成本的上升，更意味着维护成本的指数级增加。</p><p>我们常常陷入“功能蔓延”的陷阱，总觉得系统应该无所不能。然而，长寿的软件往往是克制的。它们通常只做一件事，并把这件事做到极致。这种单功能的设计，让软件的逻辑变得极度清晰，几乎没有出错的余地。</p><p>当你想为系统增加一个新特性时，试着先冷静一个星期。如果一个星期后你发现没有它日子也能照样过，那就果断放弃它。<strong>克制欲望，是保持代码轻量、纯粹的关键。</strong></p><h2>四、 数字手艺人：用匠心对抗熵增</h2><p>写代码不仅是一门技术，更是一门手艺。在 AI 生成代码泛滥的今天，一键生成成百上千行代码变得轻而易举，但这些代码往往充满了冗余和隐患。这就像用流水线塑料垃圾填满我们的数字空间。</p><p>真正的数字手艺人，会像木匠雕琢一把椅子那样，去雕琢自己的每一行代码。他们追求代码的简洁、可读与优雅。他们会为了省下几 KB 的体积而反复优化，会为了一个变量的命名斟酌良久。这种看似“低效”的雕琢，实际上是在对抗系统的熵增，为软件注入持久的生命力。</p><p>当我们不再一味追求“快”，而是追求“好”和“久”时，代码就不再是随时可弃的快消品，而是一件值得流传的数字艺术品。写出能运行十年的代码，不仅是对技术的致敬，更是我们在这个喧嚣时代里，留给数字世界最深沉的足迹。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
