@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 018 期：对抗“膨胀”：以原生之美重建数字世界的轻盈 - Mazi</title>
+  <meta name="description" content="在网页动辄数兆、框架层层叠加的今天，重温原生 HTML 与 CSS 的极简美学，用技术上的克制换取阅读者的心流与数字资产的永续。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-06-24</p>
+      <h1>第 018 期：对抗“膨胀”：以原生之美重建数字世界的轻盈</h1>
+      <p>在网页动辄数兆、框架层层叠加的今天，重温原生 HTML 与 CSS 的极简美学，用技术上的克制换取阅读者的心流与数字资产的永续。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>我们每天都在经历一种荒诞的现实：打开一个只有几千字纯文本的网页，浏览器却需要加载数兆字节的 JavaScript 脚本、臃肿的字体文件和层层嵌套的样式框架。原本为了传递信息而生的 Web，如今正被过度工程化和视觉过载所吞噬。这种“数字膨胀”不仅消耗着带宽与算力，更在无形中蚕食着读者的注意力与耐心。</p><p>作为创作者与开发者，我们是否应该停下追逐最新技术栈的脚步，重新审视那个被遗忘的起点：<strong>以原生、极简、高性能的方式，重建数字世界的轻盈与优雅？</strong></p><h2>一、 膨胀的数字景观：我们在为谁的复杂买单？</h2><p>现代网页开发的工具链已经变得无比沉重。为了实现一个简单的排版，我们引入了成百上千个 npm 依赖包；为了追求所谓的“开发体验”，我们构建了复杂的编译管线。然而，这种便利往往是以牺牲“用户体验”为代价的。用户在等待页面渲染的白屏瞬间，流失的是最珍贵的心流状态。</p><p>这种膨胀背后，是对“技术先进性”的盲目崇拜。我们习惯了用加法解决问题：不够酷炫？加一段动效脚本；排版不够现代？引入一个庞大的 CSS 库。我们唯独忘记了<strong>奥卡姆剃刀定律</strong>——如无必要，勿增实体。当技术本身成为主角，内容反而退化成了点缀。一个充满视觉噪音、加载缓慢的网页，是对阅读最深重的伤害。</p><h2>二、 原生的力量：现代 CSS 与 HTML 的隐形进化</h2><p>许多人对“原生开发”的抗拒，源于对旧时代 Web 技术的刻板印象。事实上，今天的原生 HTML5 和 CSS 已经进化得足够强大和优雅。我们不再需要为了一个网格布局而引入复杂的框架，<code>display: grid</code> 和 <code>flexbox</code> 已经成为现代浏览器的标配；我们也不再需要为了平滑滚动或简单的交互而依赖庞大的 JS 库，原生的 CSS 属性和原生的 Web Components 已经能够优雅地完成这一切。</p><p>拥抱原生，意味着主动剥离不必要的抽象层。当我们用最纯粹的 HTML 标记结构，用最精简的 CSS 描绘样式时，网页不仅获得了极佳的加载速度（通常整个页面可以控制在 50KB 以内），更获得了跨越时代的生命力。一个没有复杂 JS 依赖的原生网页，在十年甚至二十年后，依然能够被任何浏览器完美解析。这种技术上的“长寿”，正是长期主义在数字世界中的具体实践。</p><h2>三、 留白与呼吸：排版美学中的“不作为”</h2><p>在设计美学中，最难的不是“画上什么”，而是“留下什么”。一个高质量的阅读媒介，其美感不应该来自于花哨的动效和刺眼的配色，而应该来自于严谨的排版与克制的视觉秩序。</p><ul><li><strong>字体的呼吸感：</strong> 合理的行高（line-height）与字间距（letter-spacing）是无声的邀请，它们决定了眼睛在字里行间穿行时的疲劳程度。</li><li><strong>网格的隐形约束：</strong> 完美的对齐和比例关系（如黄金分割或根号二比例）能够给读者带来心理上的秩序感和安全感。</li><li><strong>留白的叙事力：</strong> 页面中的空白不是浪费，而是视线的停顿与思考的容器。优秀的排版懂得在何时给读者留出喘息的空间。</li></ul><p>当我们去掉那些浮夸的背景渐变和弹窗动画，只留下精致的衬线体、考究的字阶和恰到好处的留白时，文字本身的重力才会真正显现。此时，设计退隐为背景，内容成为了唯一的焦点。</p><h2>四、 极简主义的数字实践</h2><p>要重建数字世界的轻盈，我们可以从以下几个具体的原则开始做起：</p><p><strong>1. 100KB 约束：</strong> 尝试将你的个人网站或博客的单页体积（包括 HTML、CSS 和必要的图片）控制在 100KB 以内。这种近乎苛刻的约束会逼迫你进行最深度的优化，放弃无意义的装饰，只保留最核心的内容。</p><p><strong>2. 语义化优先：</strong> 坚持使用最具语义化的 HTML 标签。这不仅是为了 SEO 和无障碍访问（Accessibility），更是为了保持代码结构的纯粹与可读。</p><p><strong>3. 拒绝无意义的跟踪与分析：</strong> 每一个第三方的统计脚本、像素追踪，都是对用户隐私的窥探和网页性能的拖累。信任你的读者，给他们一个完全清爽、无跟踪的纯净阅读环境。</p><h2>结语：在轻盈中，重拾阅读的尊严</h2><p>在一个喧嚣、臃肿、充满算法投喂的数字时代，一个加载秒开、排版优雅、没有任何弹窗与追踪的极简网页，就像是喧闹都市里的一间禅室。它不迎合、不讨好，只是静静地呈递着文字与思想。</p><p>这种轻量化的实践，不仅是一次技术上的返璞归真，更是一场对抗消费主义与信息过载的微型革命。让我们用原生的力量，在数字废墟中重建一片轻盈的绿洲，为自己，也为每一位远道而来的读者，重拾阅读的尊严。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

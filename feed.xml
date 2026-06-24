@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 23 Jun 2026 13:02:55 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 13:03:24 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                    <item>
+                                                        <item>
+      <title>第 018 期：对抗“膨胀”：以原生之美重建数字世界的轻盈</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/018.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/018.html</guid>
+      <pubDate>Wed, 24 Jun 2026 13:03:24 +0800</pubDate>
+      <description>在网页动辄数兆、框架层层叠加的今天，重温原生 HTML 与 CSS 的极简美学，用技术上的克制换取阅读者的心流与数字资产的永续。</description>
+    </item>
+    <item>
       <title>第 017 期：重返「本地优先」：在云端霸权下，重构数字资产的个人主权</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/017.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/017.html</guid>
