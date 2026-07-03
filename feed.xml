@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 02 Jul 2026 12:57:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 12:42:04 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                        <item>
+                                                                                            <item>
+      <title>第 027 期：慢科技的静水流深：在即时反馈的时代，重建「非同步」的数字生活</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/027.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/027.html</guid>
+      <pubDate>Fri, 03 Jul 2026 12:42:04 +0800</pubDate>
+      <description>探讨在即时通讯与实时同步泛滥的今天，如何通过拥抱「非同步」与「慢软件」的设计理念，重塑深度专注的个人数字生活。</description>
+    </item>
+    <item>
       <title>第 026 期：对抗「数字折旧」：在订阅制浪潮中，重寻可以陪伴终身的「耐用工具」</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/026.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/026.html</guid>
