@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Jul 2026 12:42:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 12:35:25 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                            <item>
+                                                                                                <item>
+      <title>第 028 期：重返「本地优先」：在脆弱的云端时代，重建数字资产的「安全屋」</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/028.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/028.html</guid>
+      <pubDate>Sat, 04 Jul 2026 12:35:25 +0800</pubDate>
+      <description>在云端服务频频宕机与订阅制泛滥的今天，探讨「本地优先」的软件哲学，教你如何夺回数字资产的所有权，构建安全、持久、快速的个人数字自治领地。</description>
+    </item>
+    <item>
       <title>第 027 期：慢科技的静水流深：在即时反馈的时代，重建「非同步」的数字生活</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/027.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/027.html</guid>
