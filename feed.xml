@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 06 Jul 2026 13:12:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 12:15:09 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                        <item>
+                                                                                                            <item>
+      <title>第 031 期：微型软件的尊严：在臃肿的现代生态中，重拾‘一生只做一件事’的工具美学</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/031.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/031.html</guid>
+      <pubDate>Wed, 08 Jul 2026 12:15:09 +0800</pubDate>
+      <description>探讨在软件日益臃肿、工具沦为平台的时代，如何通过微型软件（Tiny Software）和 Unix 哲学，重拾工具的克制、优雅与长久生命力。</description>
+    </item>
+    <item>
       <title>第 030 期：对抗熵增：在膨胀的系统与生活中，重寻「最小必要」的秩序</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/030.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/030.html</guid>
