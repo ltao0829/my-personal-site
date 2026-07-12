@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 035 期：原生主义的复归：在框架与依赖的泥潭中，重寻「零外部依赖」的建造美学 - Mazi</title>
+  <meta name="description" content="在软件与生活都被重重框架与依赖绑架的今天，重新审视“零外部依赖”的原生建造，找回轻盈、自主且能对抗时间的数字尊严。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-07-12</p>
+      <h1>第 035 期：原生主义的复归：在框架与依赖的泥潭中，重寻「零外部依赖」的建造美学</h1>
+      <p>在软件与生活都被重重框架与依赖绑架的今天，重新审视“零外部依赖”的原生建造，找回轻盈、自主且能对抗时间的数字尊严。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>你是否也曾经历过这样的荒诞时刻：为了在网页上实现一个简单的淡入淡出效果，你需要引入一个数百KB的第三方动画库；为了搭建一个个人博客，你需要配置复杂的脚手架、安装数以千计的依赖包，最终得到的 <code>node_modules</code> 文件夹体积甚至超过了一部高清电影。我们美其名曰这是‘现代工程化’，但在这场为了造一个勺子而先建造一座钢铁厂的狂欢中，我们似乎正在失去对创造最本质的掌控。</p><h2>现代建造的「依赖陷阱」</h2><p>在技术领域，‘框架’（Framework）与‘依赖’（Dependency）的出现本是为了解放生产力。它们提供了一套行之有效的‘最佳实践’，让开发者能够像搭积木一样快速拼装出复杂的系统。然而，当这种便利成为唯一的路径时，温水煮青蛙的效应便开始显现。</p><p>首先是<strong>控制权的让渡</strong>。当你将系统的核心逻辑寄托于外部框架时，你也同时接受了它的黑盒机制、它的设计缺陷以及它随时可能停止维护的风险。其次是<strong>心智带宽的无端消耗</strong>。现代开发者有太多时间不是在编写业务逻辑，而是在解决依赖冲突、升级破坏性更新（Breaking Changes）以及在层出不穷的新框架之间疲于奔命。我们误以为自己在创造，其实只是在做各种胶水代码的缝合。</p><p>这种「依赖陷阱」并不仅存在于软件开发中。环顾我们的数字生活，我们同样被重重的‘生活框架’所绑架：没有了特定的笔记软件，我们似乎就无法思考；没有了算法推荐的清单，我们甚至不知道今晚该看什么电影。我们高度依赖外部系统来维持自身的运转，却忘记了大脑本身就拥有极强的原生构建能力。</p><h2>原生美学：轻盈、自主与时间的豁免权</h2><p>所谓‘原生主义’（Vanilla philosophy），并非一种盲目的复古或对现代技术的排斥，而是一种对<strong>自给自足、最小必要、长期主义</strong>的重新申明。在 Web 开发中，它表现为对 Native HTML、CSS 和原生 JavaScript 的坚守。</p><p>原生的美学，首先在于它的<strong>轻盈与高性能</strong>。一个完全基于原生技术编写的网页，没有虚拟 DOM 的开销，没有打包工具的冗余，它在浏览器中加载的速度快如闪电，对计算资源的消耗微乎其微。这种轻盈，是对用户设备和注意力的最大尊重。</p><p>更重要的是，原生技术拥有<strong>对抗时间的豁免权</strong>。一个写于 2005 年的纯 HTML 页面，在 2025 年的现代浏览器中依然能够完美呈现，甚至在 2045 年也同样如此。相反，一个写于三年前的、基于某种流行前端框架的项目，在今天大概率已经因为依赖过期而无法顺利运行。原生的代码是具有生命力的生命体，它不依赖于任何商业公司的意志或社区潮流的更迭，它只与开放的 Web 标准同寿。</p><h2>从代码到生活：构建「零外部依赖」的个人系统</h2><p>当我们把‘零外部依赖’的建造美学引入到个人成长与数字生活中时，一种全新的、更具韧性的生活方式便浮出水面。如何构建一个低依赖、高自主的个人系统？我们可以从以下三个维度进行尝试：</p><ul><li><strong>信息摄取的「去媒介化」：</strong> 减少对算法推荐和聚合平台的依赖。主动通过 RSS 订阅、直接访问独立网站和阅读实体书籍来获取一手信息。打破被动喂养的链条，重新训练自己主动检索和筛选信息的能力。</li><li><strong>知识管理的「通用化」：</strong> 放弃那些绑定在特定商业软件生态（如 Notion、Obsidian 等）中的复杂工作流。回归最朴素的 Markdown 文件和本地文件夹结构。只要纯文本（Plain Text）的标准存在，你的知识资产就永远属于你，不因任何软件的倒闭或转型而贬值。</li><li><strong>工具链的「原子化」：</strong> 倾向于选择那些‘一生只做一件事’的单点工具，而不是试图接管你一切的‘全家桶’。当每个工具都是独立的、可替换的，你的系统就具备了极高的模块化程度和抗风险能力。</li></ul><h2>结语：重拾「从零开始」的创造尊严</h2><p>在这个凡事追求效率、崇尚‘拿来主义’的时代，提倡‘原生’与‘零依赖’显得有些不合时宜。但正是在这种看似低效的‘重复造轮子’过程中，我们得以抚摸到技术的每一处纹理，理解每一行代码、每一个决策背后的真正逻辑。</p><p>下一次，当你准备开始一个新的项目，或者试图整理自己的生活时，不妨试着把那些庞大的框架和现成的模板放在一边。面对一张白纸，用最基础的工具，一行行写下属于你自己的逻辑。在那一刻，你会重新感受到那种久违的、真正的创造尊严——不依附于他人，不妥协于时间，完全由你掌控的轻盈之美。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
