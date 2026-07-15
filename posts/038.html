@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 038 期：不可变性的力量：在瞬息万变的动态流中，重构「恒定」的精神锚点 - Mazi</title>
+  <meta name="description" content="从技术中的「不可变性」出发，探讨在瞬息万变、实时刷新的现代生活里，我们如何通过重建「定稿」与「只读」的仪式感，来对抗无处不在的动态焦虑。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-07-15</p>
+      <h1>第 038 期：不可变性的力量：在瞬息万变的动态流中，重构「恒定」的精神锚点</h1>
+      <p>从技术中的「不可变性」出发，探讨在瞬息万变、实时刷新的现代生活里，我们如何通过重建「定稿」与「只读」的仪式感，来对抗无处不在的动态焦虑。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>在现代软件工程中，有一个备受推崇的概念叫做<strong>不可变性（Immutability）</strong>。在函数式编程里，一个数据结构一旦被创建，就无法被修改；如果需要改变，就必须创建一个全新的副本。在 Git 的世界里，每一次提交都是历史长河中的一个硬锚点，不可篡改，只能追加。这种看似死板、低效的设计，却构成了现代高并发、高可用系统最坚固的底层基石。</p>
+
+<h2>技术隐喻：消除「副作用」的艺术</h2>
+<p>为什么程序员如此钟情于不可变性？答案是为了消除副作用（Side Effects）。在一个高度可变（Mutable）的系统里，任何一个角落的代码都可能悄悄修改全局变量，导致程序在某个无法预知的时刻崩溃。可变性带来了灵活性，但也带来了混乱、不确定性与难以追踪的 Bug。</p>
+<p>我们的个人静态博客也是这种哲学的延伸。没有数据库，没有动态路由，没有运行时的脚本解析。每一篇文章在生成（Build）的那一刻起，就成了服务器上一个物理存在的 HTML 文件。它不随用户的每一次刷新而重新计算，它静静地躺在那里，呈现出一种确定性的美感。这种「静态」与「不可变」，让创作者和读者都获得了一种免于系统崩溃的安全感。</p>
+
+<h2>动态深渊：被「实时刷新」绑架的现代生活</h2>
+<p>然而，当我们把视线从代码拉回现实生活，会发现我们正身处一个极端「可变」的时代。社交媒体的 feed 流每秒都在刷新，协同文档里的光标在实时闪烁，热搜榜单在不停重构，甚至连我们发布在朋友圈的内容，也可以随时修改或设置为「三天可见」。</p>
+<p>这种无处不在的「可变性」，正在悄然消解我们生活中的<strong>「完成感」</strong>。过去，写一封信、寄一张明信片、出版一本书，都是不可变的。一旦寄出或付梓，便意味着某种确定性的达成。你必须在落笔前深思熟虑，因为你无法「撤回」或「编辑」。</p>
+<p>而今天，因为随时可以修改，我们变得不再敬畏表达；因为一切都在实时变动，我们失去了给事情画上句号的能力。我们陷入了「无限修正」的陷阱，永远在调整配置，永远在优化草稿，却迟迟无法交付。这种没有终点的动态流，最终演变成了现代人精神深处的慢性焦虑。</p>
+
+<h2>重寻「只读」与「定稿」的仪式感</h2>
+<p>要对抗这种由过度动态带来的虚无感，我们需要在生活中主动引入「不可变性」。这并非要我们固步自封，而是要在流动的世界里，为自己构建一些不随波逐流的硬锚点。</p>
+<ul>
+  <li><strong>拥抱「定稿」的勇气：</strong> 允许不完美的存在。无论是写一篇文章、设计一个网页，还是完成一个项目，在某个节点，坚决地按下「发布」或「归档」键。将其视为一个不可变的「历史版本」，然后开启新的篇章。</li>
+  <li><strong>建立「只读」的静修时刻：</strong> 在一天中划出一段绝对不产生交互的时间。不回复消息，不修改文档，只进行单向的、不可逆的深度输入。比如阅读一本纸质书，或者用钢笔在手帐本上写字——墨水一旦渗入纸张，便成了不可更改的历史。</li>
+  <li><strong>物理化你的数字资产：</strong> 将那些对你真正重要的数字内容「固化」。打印出你最喜欢的照片，将写得最好的文章结集印刷，或者把重要的代码和笔记备份到只读介质中。让它们脱离动态网络的电力支撑，获得物理世界里的恒定。</li>
+</ul>
+
+<h2>在流动的世界里，做一个有版本号的人</h2>
+<p>古希腊哲学家赫拉克利特曾说：「人不能两次涉入同一条河流。」世界终究是流动的。但正是因为河流在奔腾，那些立于河床之上的礁石才显得如此珍贵。</p>
+<p>不可变性不是僵化，而是一种对秩序的坚守。它让我们在每一次做出决定、每一次完成创作时，都能自豪地宣告：这就是我此时此刻的思考，它已经定格，它不惧时间的冲刷。</p>
+<p>在这个瞬息万变的时代，愿我们都能在心中保留一块「只读区域」，在喧嚣的动态流中，守住那份属于「恒定状态」的尊严与秩序。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
