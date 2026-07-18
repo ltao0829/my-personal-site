@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 17 Jul 2026 12:06:33 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 11:55:19 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                <item>
+                                                                                                                                                    <item>
+      <title>第 041 期：静态的生命力：在动态生成的喧嚣中，重拾「纯 HTML 页面」的永恒与轻盈</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/041.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/041.html</guid>
+      <pubDate>Sat, 18 Jul 2026 11:55:19 +0800</pubDate>
+      <description>在万物皆可动态生成的云时代，重新审视静态网页的物理确定性、无条件的可访问性以及其所承载的数字长期主义。</description>
+    </item>
+    <item>
       <title>第 040 期：异步的优雅：在即时响应的囚徒困境中，重拾「深思熟虑」的时间主权</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/040.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/040.html</guid>
