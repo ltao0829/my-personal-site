@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 21 Jul 2026 12:15:35 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 12:15:38 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                            <item>
+                                                                                                                                                                <item>
+      <title>第 044 期：文件系统的尊严：在应用孤岛与云端抽象的迷雾中，重拾「目录与路径」的物理掌控感</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/044.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/044.html</guid>
+      <pubDate>Thu, 23 Jul 2026 12:15:38 +0800</pubDate>
+      <description>当现代操作系统试图用“搜索”和“标签”抹平文件的物理存在，重拾清晰的目录层级，不仅是对数字资产的真正确权，更是一场重建空间记忆与深度秩序的认知革命。</description>
+    </item>
+    <item>
       <title>第 043 期：纯文本的尊严：在富媒体与排版过载的泥潭中，重筑「点阵与字符」的思考骨架</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/043.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/043.html</guid>
