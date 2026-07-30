@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Jul 2026 12:12:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 11:57:17 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                    <item>
+                                                                                                                                                                                        <item>
+      <title>第 050 期：本地优先的尊严：在云端订阅与数据蒸发的危机中，重拾「离线可用」的物理安全感</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/050.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/050.html</guid>
+      <pubDate>Thu, 30 Jul 2026 11:57:17 +0800</pubDate>
+      <description>当万物皆可订阅，我们的数字资产正沦为随时可能蒸发的租借物。重拾本地优先哲学，在本地设备中重建我们对数据的物理掌控感与长期安全感。</description>
+    </item>
+    <item>
       <title>第 049 期：命令行的尊严：在自然语言与图形交互的迷雾中，重拾「精确指令」的意志与掌控</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/049.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/049.html</guid>
