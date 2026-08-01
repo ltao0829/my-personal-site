@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 31 Jul 2026 12:22:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 12:21:39 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                            <item>
+                                                                                                                                                                                                <item>
+      <title>第 052 期：静态网页的优雅：在JS膨胀与动态渲染的泥潭中，重拾「即开即读」的轻盈与永恒</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/052.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/052.html</guid>
+      <pubDate>Sat, 01 Aug 2026 12:21:39 +0800</pubDate>
+      <description>探讨在现代Web开发过度工程化、JavaScript膨胀的背景下，静态网页所独有的轻盈、安全与生命力，以及它如何帮助我们重拾数字世界的确定性。</description>
+    </item>
+    <item>
       <title>第 051 期：异步沟通的尊严：在即时通信与随时待命的暴政下，重拾「深思熟虑」的思考缓冲</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/051.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/051.html</guid>
