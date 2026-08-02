@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Aug 2026 12:21:39 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2026 12:22:51 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                <item>
+                                                                                                                                                                                                    <item>
+      <title>第 053 期：系统默认的优雅：在个性化定制与视觉过载的喧嚣中，重拾「原生界面」的克制与效率</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/053.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/053.html</guid>
+      <pubDate>Sun, 02 Aug 2026 12:22:51 +0800</pubDate>
+      <description>探讨在软件定制化泛滥的今天，为什么回归系统默认设计才是最高效、最克制的数字生活美学。</description>
+    </item>
+    <item>
       <title>第 052 期：静态网页的优雅：在JS膨胀与动态渲染的泥潭中，重拾「即开即读」的轻盈与永恒</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/052.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/052.html</guid>
