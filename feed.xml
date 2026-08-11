@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 06 Aug 2026 12:13:04 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 11:04:17 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                    <item>
+                                                                                                                                                                                                                        <item>
+      <title>第 058 期：自托管的尊严：在SaaS订阅与服务停摆的焦虑中，重拾「数字资产」的绝对主权</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/058.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/058.html</guid>
+      <pubDate>Tue, 11 Aug 2026 11:04:17 +0800</pubDate>
+      <description>在软件即服务的便利面具下，我们正沦为数字租客。自托管不仅是技术的折腾，更是我们在中心化荒漠中重建数字主权与数据尊严的长期主义实践。</description>
+    </item>
+    <item>
       <title>第 057 期：文件系统的尊严：在应用数据库与云端沙盒的圈养中，重拾「物理文件」的自由与掌控</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/057.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/057.html</guid>
