@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Aug 2026 11:04:17 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 11:23:07 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                            <item>
+      <title>第 059 期：独立工具的尊严：在 All-in-One 平台的无限膨胀中，重拾「Unix 哲学」的专注与解耦</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/059.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/059.html</guid>
+      <pubDate>Wed, 12 Aug 2026 11:23:07 +0800</pubDate>
+      <description>当现代软件逐渐膨胀为试图吞噬一切的“超级平台”，重温 Unix 哲学，用解耦的、只做好一件事的独立工具，重构轻盈、自由且自主的数字工作流。</description>
+    </item>
+    <item>
       <title>第 058 期：自托管的尊严：在SaaS订阅与服务停摆的焦虑中，重拾「数字资产」的绝对主权</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/058.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/058.html</guid>
