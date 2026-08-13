@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Aug 2026 11:23:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2026 11:26:38 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                            <item>
+                                                                                                                                                                                                                                <item>
+      <title>第 060 期：超链接的尊严：在 App 围墙花园与内容孤岛的割裂中，重拾「开放互联」的万维网初心</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/060.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/060.html</guid>
+      <pubDate>Thu, 13 Aug 2026 11:26:38 +0800</pubDate>
+      <description>探讨在移动互联网时代，App 围墙花园如何割裂了原本开放的万维网，并呼吁重拾超链接（Hyperlink）的自由与互联精神。</description>
+    </item>
+    <item>
       <title>第 059 期：独立工具的尊严：在 All-in-One 平台的无限膨胀中，重拾「Unix 哲学」的专注与解耦</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/059.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/059.html</guid>
