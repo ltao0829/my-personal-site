@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 Aug 2026 10:13:24 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2026 10:21:00 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                    <item>
+                                                                                                                                                                                                                                        <item>
+      <title>第 062 期：无依赖运行的尊严：在依赖地狱与容器封装的重负中，重拾「单文件二进制」的轻盈与自洽</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/062.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/062.html</guid>
+      <pubDate>Sun, 16 Aug 2026 10:21:00 +0800</pubDate>
+      <description>探讨在现代软件开发日益臃肿的背景下，如何通过重拾无依赖、单文件二进制的设计哲学，摆脱“依赖地狱”与容器化重负，找回软件最初的轻盈、自洽与掌控感。</description>
+    </item>
+    <item>
       <title>第 061 期：本地优先的尊严：在云端依赖与网络断联的脆弱中，重拾「离线可用」的确定性与安全感</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/061.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/061.html</guid>
