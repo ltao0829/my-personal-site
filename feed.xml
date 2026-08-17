@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 16 Aug 2026 10:21:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2026 10:19:36 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                                            <item>
+      <title>第 063 期：手作代码的尊严：在 AI 生成与黑盒堆砌的泡沫中，重拾「逐行构建」的匠心与掌控</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/063.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/063.html</guid>
+      <pubDate>Mon, 17 Aug 2026 10:19:36 +0800</pubDate>
+      <description>当 AI 瞬间生成千行代码，我们是否正在失去对系统的理解？本文探讨在黑盒堆砌的时代，重拾手作代码与逐行构建的长期价值与工程师尊严。</description>
+    </item>
+    <item>
       <title>第 062 期：无依赖运行的尊严：在依赖地狱与容器封装的重负中，重拾「单文件二进制」的轻盈与自洽</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/062.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/062.html</guid>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 063 期：手作代码的尊严：在 AI 生成与黑盒堆砌的泡沫中，重拾「逐行构建」的匠心与掌控 - Mazi</title>
+  <meta name="description" content="当 AI 瞬间生成千行代码，我们是否正在失去对系统的理解？本文探讨在黑盒堆砌的时代，重拾手作代码与逐行构建的长期价值与工程师尊严。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-08-17</p>
+      <h1>第 063 期：手作代码的尊严：在 AI 生成与黑盒堆砌的泡沫中，重拾「逐行构建」的匠心与掌控</h1>
+      <p>当 AI 瞬间生成千行代码，我们是否正在失去对系统的理解？本文探讨在黑盒堆砌的时代，重拾手作代码与逐行构建的长期价值与工程师尊严。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>在这个被大语言模型和自动补全包围的时代，写代码的体验正经历着前所未有的剧变。只需敲下几个字符，或者用自然语言描述一个需求，AI 就能在毫秒间吐出成百上千行的精美代码。效率仿佛被按下了万倍加速键。然而，在这种令人眩晕的快感背后，一种隐秘的危机正在悄然蔓延——我们正在失去对代码的理解，失去对系统的掌控，进而失去了作为创造者的「手作尊严」。</p>
+
+<h2>一、 效率的幻觉：被黑盒吞噬的掌控感</h2>
+<p>现代软件开发已经叠加了太多层抽象：从底层硬件到操作系统，从虚拟机到高级语言，再到层出不穷的框架与包管理器。而今天，AI 生成的代码成为了最新、最厚的一层抽象。当我们习惯于「接受补全（Tab）」和「复制粘贴」时，代码的生产过程变成了一个双重黑盒：我们用不完全理解的提示词，生成了不完全理解的代码，再去运行在不完全理解的运行环境中。</p>
+<p>这种「拼图式」的开发带来了一种高效的幻觉。在项目初期，功能堆砌的速度快得惊人；但当系统规模扩大，或者遭遇难以名状的边界情况（Edge Case）时，开发者往往会陷入漫长而痛苦的调试深渊。你无法调试你未曾真正思考过的逻辑，你只能继续向 AI 求助，用更多的黑盒去覆盖旧的黑盒。这种饮鸩止渴的方式，正在侵蚀软件的健壮性，也让开发者的心智带宽被无意义的排错消耗殆尽。</p>
+
+<h2>二、 逐行构建的匠心：为什么「手作」不可替代</h2>
+<p>木匠不会只满足于用现成的预制板拼装家具，他们需要抚摸木头的纹理，用凿子和刨刀去感受阻力；作家不会只满足于用大纲生成器填充字数，他们需要在每一个词的斟酌中提炼思想。代码同样是一种手艺，每一行代码都承载着逻辑的流动、内存的权衡以及设计的美学。</p>
+<p>逐行构建（Line-by-line Construction）并不是效率低下的代名词，而是一种深度的认知仪式。当你亲手写下 <code>for</code> 循环，亲手设计数据结构，亲手处理每一次异常时，你是在大脑中构建一个微型的运行实体。这种「慢」带来了几个无可比拟的优势：</p>
+<ul>
+    <li><strong>极致的极简与性能：</strong> 手作代码往往更加克制。因为是自己写，你会本能地拒绝不必要的依赖，追求最直接、最原生的解决方案，从而避免了 AI 生成代码中常见的过度设计和冗余逻辑。</li>
+    <li><strong>坚韧的心智模型：</strong> 逐行写出的代码，其逻辑图景是清晰刻印在脑海中的。当 Bug 出现时，你不需要依赖搜索引擎，凭借直觉就能定位问题所在。</li>
+    <li><strong>不可替代的掌控感：</strong> 只有当你完全理解每一行代码的意图与代价时，你才真正拥有这个软件。这种主权带来的安宁，是任何自动生成工具都无法赋予的。</li>
+</ul>
+
+<h2>三、 在生成式洪流中，重拾「手作的尊严」</h2>
+<p>提倡「手作代码的尊严」，并非是要我们退回到茹毛饮血的石器时代，拒绝技术进步。相反，它是要求我们在强大的工具面前保持清醒与主体性。我们应当将 AI 定位为「博学的讨论者」或「枯燥样板代码的清洁工」，而非「架构的决策者」与「逻辑的代笔人」。</p>
+<p>要重拾这种尊严，我们可以从以下几个微小的实践开始：</p>
+<p>首先，<strong>坚持核心逻辑的手写。</strong> 系统的核心算法、关键状态机和核心业务领域模型，应当由人类大脑亲自推演并逐字敲下。这些地方是软件的灵魂，不容他人代笔。</p>
+<p>其次，<strong>奉行「不理解，不提交」的原则。</strong> 无论是来自 AI 还是开源社区的代码片段，在并入主分支之前，必须进行逐行重构与理解。如果你解释不清楚某行代码为什么要存在，那么它就不应该存在于你的代码库中。</p>
+<p>最后，<strong>享受「造轮子」的乐趣。</strong> 在业余项目或个人工具中，尝试不依赖任何现代重度框架，用最原生的语言去手作一个完整的应用。在这种纯粹的创造中，你会重新找回编程最初的、最单纯的快乐。</p>
+
+<h2>结语：写给未来的数字匠人</h2>
+<p>当代码的边际成本趋近于零，真正珍贵的不再是代码的数量，而是代码背后的意图、克制与美感。未来的优秀工程师，绝不是那些能够熟练拼凑 AI 片段的「提示词操作员」，而是那些在流水线工业时代，依然坚守手艺人标准，对每一行代码的运行代价了然于胸的「数字匠人」。</p>
+<p>愿我们在喧嚣的自动化浪潮中，依然能骄傲地宣告：<strong>这行代码，是我自己写的。</strong></p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
