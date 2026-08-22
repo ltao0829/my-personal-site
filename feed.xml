@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 21 Aug 2026 10:23:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2026 10:15:46 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                            <item>
+                                                                                                                                                                                                                                                                <item>
+      <title>第 068 期：原生界面的尊严：在跨平台框架与内存吞噬的臃肿中，重拾「系统原生」的流畅与优雅</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/068.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/068.html</guid>
+      <pubDate>Sat, 22 Aug 2026 10:15:46 +0800</pubDate>
+      <description>探讨在 Electron 与跨平台框架泛滥的今天，我们为何应当重新珍视原生应用带来的极致性能、系统契合度与人机交互的纯粹体验。</description>
+    </item>
+    <item>
       <title>第 067 期：主动订阅的尊严：在算法推荐与信息投喂的囚笼中，重拾「RSS 阅读」的掌控与清净</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/067.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/067.html</guid>
