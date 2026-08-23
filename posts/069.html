@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 069 期：自建服务的尊严：在 SaaS 溢价与隐私收割的围剿中，重拾「Self-Hosting」的自由与主权 - Mazi</title>
+  <meta name="description" content="在 SaaS 服务全面转向订阅制与隐私让步的今天，自建服务（Self-Hosting）不仅是一次技术折腾，更是夺回数字资产主权与个人隐私尊严的静默革命。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-08-23</p>
+      <h1>第 069 期：自建服务的尊严：在 SaaS 溢价与隐私收割的围剿中，重拾「Self-Hosting」的自由与主权</h1>
+      <p>在 SaaS 服务全面转向订阅制与隐私让步的今天，自建服务（Self-Hosting）不仅是一次技术折腾，更是夺回数字资产主权与个人隐私尊严的静默革命。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <h2>云端之上的沙滩城堡</h2><p>我们生活在一个被 SaaS（软件即服务）接管的时代。从日常笔记、密码管理，到相册备份、音乐播放，我们习惯了用一笔笔按月扣除的订阅费，换取即开即用的便利。然而，这种便利的背后，是一场悄无声息的数字主权让渡。我们将所有的记忆、资产和工作流托付给遥远的云端，却忘记了那句古老的程序员谚语：所谓云端，不过是别人的电脑。</p><h2>SaaS 时代的隐形枷锁</h2><p>当我们将所有数据托管给云端巨头时，我们实际上放弃了数字资产的“所有权”，而仅仅保留了“使用权”。服务商可以随时更改服务条款，可以因为一次算法的误判封禁你的账号，可以因为运营不善而突然宣布关停，更可以在财报压力下肆无忌惮地提高订阅价格。更深层的隐患在于隐私——在云端，你的日记、照片、关系链，都成了喂养大模型或精准广告的燃料。我们成了自己数字生活里的租客，随时面临被房东驱逐或涨租的风险。这种寄人篱下的不确定性，消磨了我们在数字世界中的安全感与尊严。</p><h2>Self-Hosting：数字世界的自耕农</h2><p>自建服务（Self-Hosting），就是在这场数字圈地运动中的一次静默反叛。它意味着你不再依赖第三方的云端服务器，而是将服务运行在自己完全掌控的硬件上——可以是一台家里的树莓派，一台退役的旧电脑，亦或是一台自己租用的 VPS。自建，本质上是重塑人与数字工具的关系。从“消费者”转变为“建设者”，从“租客”转变为“地主”。当你拥有了数据的物理存储介质，拥有了服务的运行环境，你就拥有了绝对的确定性。这种确定性，在动荡的互联网时代，是一种极其奢侈的尊严。</p><h2>拒绝臃肿：极简自建的美学</h2><p>提及自建，许多人脑海中会浮现出复杂的 K8s 集群、繁重的运维监控和无休止的系统崩溃。但这并非自建的本意。真正的自建尊严，建立在极简与自洽之上。我们不需要为了运行一个简单的博客去配置复杂的微服务架构，也不需要为了一个笔记软件去部署庞大的数据库。正如我们在前几期所倡导的，利用单文件二进制、SQLite 数据库、静态 HTML 以及轻量级 Docker 容器，我们可以在几分钟内搭建起一个极其轻量、几乎零维护成本的服务。这种“轻量自建”不占用过多的心智，它静静地运行在角落，像一块磐石，无需你时刻照看，却随时为你服务。服务与数据的解耦，让迁移变得如同复制文件夹般简单，这才是自建的优雅所在。</p><h2>重拾掌控的数字绿洲</h2><p>当你开始尝试自建，你会发现一个全新的自由世界。用 Vaultwarden 替代 1Password，你的所有密码都保存在自己加密的数据库中，再无泄露之忧；用 Miniflux 替代商业 RSS 阅读器，享受纯粹、无广告的信息流获取；用 Syncthing 实现全平台文件的无缝同步，数据绝不经过第三方服务器；用 Gitea 托管自己的私人代码库，彻底告别平台审查。这些自建服务或许没有商业软件那般花哨的营销界面，但它们干净、专注、没有任何商业目的。它们只为你一个人服务，听从你一个人的指令。在这个喧嚣的互联网中，它们是你亲手开辟的数字绿洲。</p><h2>长期主义的终极实践</h2><p>自建服务不仅是一种技术选择，更是一场关于长期主义的深度思考。商业公司会倒闭，流行的框架会过时，风口上的技术会消亡。但那些基于标准协议、开源代码和本地数据的自建服务，却拥有近乎无限的生命力。十年后，当某个曾经红极一时的 SaaS 平台早已化为互联网的历史尘埃，你依然可以通过双击一个二进制文件，在本地完美运行你的自建系统，流畅地读取你十年前写下的文字。这种跨越时间的生命力，就是自建服务的终极尊严。夺回你的数据，构建你的绿洲，自建，正是我们在这个数字时代，体面生活下去的底气。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

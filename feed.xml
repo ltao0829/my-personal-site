@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 22 Aug 2026 10:15:46 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 10:23:22 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                <item>
+                                                                                                                                                                                                                                                                    <item>
+      <title>第 069 期：自建服务的尊严：在 SaaS 溢价与隐私收割的围剿中，重拾「Self-Hosting」的自由与主权</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/069.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/069.html</guid>
+      <pubDate>Sun, 23 Aug 2026 10:23:22 +0800</pubDate>
+      <description>在 SaaS 服务全面转向订阅制与隐私让步的今天，自建服务（Self-Hosting）不仅是一次技术折腾，更是夺回数字资产主权与个人隐私尊严的静默革命。</description>
+    </item>
+    <item>
       <title>第 068 期：原生界面的尊严：在跨平台框架与内存吞噬的臃肿中，重拾「系统原生」的流畅与优雅</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/068.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/068.html</guid>
