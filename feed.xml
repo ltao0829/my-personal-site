@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 Aug 2026 10:23:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 10:22:34 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                    <item>
+                                                                                                                                                                                                                                                                        <item>
+      <title>第 070 期：朴素笔记的尊严：在双链图谱与知识工具的军备竞赛中，重拾「线性书写」的内化与顿悟</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/070.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/070.html</guid>
+      <pubDate>Mon, 24 Aug 2026 10:22:34 +0800</pubDate>
+      <description>探讨在过度设计的知识管理（PKM）时代，我们如何被复杂的双链、图谱和插件绑架，并倡导回归朴素、线性的笔记本质，重拾真正的思考与内化。</description>
+    </item>
+    <item>
       <title>第 069 期：自建服务的尊严：在 SaaS 溢价与隐私收割的围剿中，重拾「Self-Hosting」的自由与主权</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/069.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/069.html</guid>
