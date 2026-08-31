@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 077 期：纯文本的尊严：在富文本排版与私有格式的禁锢中，重拾「.txt 与 Markdown」的通用与不朽 - Mazi</title>
+  <meta name="description" content="在排版工具日益繁复、私有格式割裂生态的今天，重温纯文本（Plain Text）的极简美学与长寿基因，找回文字创作最纯粹的心流。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-08-31</p>
+      <h1>第 077 期：纯文本的尊严：在富文本排版与私有格式的禁锢中，重拾「.txt 与 Markdown」的通用与不朽</h1>
+      <p>在排版工具日益繁复、私有格式割裂生态的今天，重温纯文本（Plain Text）的极简美学与长寿基因，找回文字创作最纯粹的心流。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <h2>引言：被格式绑架的现代书写</h2><p>我们有多久没有安静地写下几行字，而不去考虑它的字号、颜色、对齐方式和字体了？</p><p>在今天的数字化生存中，书写已经变得无比繁重。当我们打开一个现代的笔记软件或文档编辑器，迎面而来的是各种排版工具栏、斜杠命令、块级元素（Blocks），以及琳琅满目的模板。我们花费了大量的时间在调整标题层级、设置高亮背景、拖拽组件位置上，却唯独忘记了书写本身。更糟糕的是，这些华丽的排版往往被锁死在特定软件的私有数据库中，一旦平台停止服务，或者我们想要迁移数据，等待我们的将是灾难性的格式混乱。</p><p>是时候重拾纯文本（Plain Text）的尊严了。在富文本格式与私有协议的围剿中，以 <code>.txt</code> 和 <code>Markdown</code> 为代表的纯文本，依然闪烁着通用、轻盈与不朽的光芒。</p><h2>一、 格式的枷锁：私有协议下的「数字人质」</h2><p>现代协作工具和富文本编辑器带给我们一种虚幻的掌控感。我们以为自己拥有了那些格式精美的文档，但实际上，我们只是这些软件平台的「租客」。</p><p>当你使用某种基于块（Block）的笔记软件时，你的文字并不是以人类可读的物理文件存在于硬盘上，而是被拆碎、重组，存储在复杂的数据库或专有的 JSON 结构中。一旦你试图将这些内容导出，你会发现那些精美的排版瞬间崩塌，变成了一堆难以阅读的乱码。你的知识、灵感和记忆，成为了平台的数字人质。</p><p>相比之下，纯文本是这个时代最伟大的数字发明之一。一个 <code>.txt</code> 或 <code>.md</code> 文件，本质上只是最基础的字符编码（如 UTF-8）。它不需要任何特定的软件来唤醒。无论是三十年前的 DOS 系统，现在的 macOS，还是三十年后的某种全新终端，只要能读取字符编码，就能完美无损地打开它。纯文本不求取悦眼前的视觉，它追求的是穿越时间的生命力。</p><h2>二、 视觉的噪音：心流在精美排版中流失</h2><p>认知心理学研究表明，过多的视觉选择会极大地消耗我们的决策意志。当你在写作时，如果大脑不断在「这段话应该加粗还是标红」、「这里是不是应该插入一个呼出框（Callout）」等视觉排版问题上切换，你实际上已经退出了深度思考的「心流」状态。</p><p>富文本编辑器在无形中制造了大量的视觉噪音。它诱导我们去关注「文字看起来怎么样」，而不是「文字表达了什么」。</p><p>而纯文本，尤其是结合了 Markdown 语法的纯文本，提供了一种「所写即所思」的优雅体验。你只需要用最简单的符号来标注结构：一个井号代表标题，一个星号代表强调，一个破折号代表列表。你的双手永远不用离开键盘，你的视线永远不用离开正在输入的字符。排版被延迟到了写作完成之后，而写作的当下，只有你和你的思想。这种极简，才是对创作者最大的尊重。</p><h2>三、 纯文本的哲学：数据与表现的彻底分离</h2><p>纯文本的尊严，还体现在它背后所蕴含的 Unix 哲学：保持简单，只做好一件事。在纯文本的世界里，内容（数据）与呈现形式（表现）是彻底分离的。</p><p>你的 <code>.md</code> 文件只负责诚实地记录文字和结构。至于如何让它变得好看，那是渲染引擎、CSS 样式表或静态网页生成器的任务。你可以用同一个纯文本文件，在本地终端里用 Vim阅读，在手机上用极简编辑器修改，或者通过静态博客框架（如 Hugo、Hexo）将其渲染成符合现代设计美学的网页。</p><p>这种分离带来了无与伦比的自由：</p><ul><li><strong>极高的性能：</strong> 纯文本文件通常只有几 KB 大小，瞬间即可加载完成，不需要消耗数兆内存去运行一个 Electron 套壳浏览器。</li><li><strong>无缝的检索：</strong> 你可以使用系统自带的全局搜索（如 Ripgrep 或 Spotlight），在零点几秒内检索数十万字的纯文本笔记，而不需要等待云端数据库的缓慢响应。</li><li><strong>完美的版本控制：</strong> 配合 Git，纯文本的每一次修改、每一行删减都清晰可见，你可以像管理代码一样，优雅地管理自己的思想演进。</li></ul><h2>结语：重回轻盈的数字生活</h2><p>在这个万物皆可「云端化」、「富文本化」和「AI 自动化」的时代，选择纯文本，并不是一种落伍的怀旧，而是一种清醒的防御。它防御着消费主义对工具的过度包装，防御着商业巨头对个人数据的无形蚕食。</p><p>当你下一次准备记录灵感、撰写文章或规划人生时，不妨试着关掉那些臃肿的现代套件，新建一个空白的 <code>.txt</code> 或 <code>.md</code> 文件。在黑底白字、没有任何干扰的编辑界面中，听着键盘清脆的敲击声，你会重新发现：原来文字本身，就已经足够动人。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

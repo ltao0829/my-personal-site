@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Aug 2026 14:17:06 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2026 14:43:46 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                <item>
+                                                                                                                                                                                                                                                                                                    <item>
+      <title>第 077 期：纯文本的尊严：在富文本排版与私有格式的禁锢中，重拾「.txt 与 Markdown」的通用与不朽</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/077.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/077.html</guid>
+      <pubDate>Mon, 31 Aug 2026 14:43:46 +0800</pubDate>
+      <description>在排版工具日益繁复、私有格式割裂生态的今天，重温纯文本（Plain Text）的极简美学与长寿基因，找回文字创作最纯粹的心流。</description>
+    </item>
+    <item>
       <title>第 076 期：静态网页的尊严：在动态框架与重度渲染的现代迷宫中，重拾「超文本」的轻盈与不朽</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/076.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/076.html</guid>
