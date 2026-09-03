@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 02 Sep 2026 13:29:29 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 13:30:43 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                            <item>
+                                                                                                                                                                                                                                                                                                                <item>
+      <title>第 080 期：自托管的尊严：在 SaaS 订阅与隐私让渡的围墙中，重拾「自建服务」的自由与主权</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/080.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/080.html</guid>
+      <pubDate>Thu, 03 Sep 2026 13:30:43 +0800</pubDate>
+      <description>当万物皆可订阅，我们失去了对数字财产的终极控制。自托管不仅是一场技术折腾，更是一场夺回个人数字主权的温和革命。</description>
+    </item>
+    <item>
       <title>第 079 期：开放网络的尊严：在平台孤岛与围墙花园的割裂中，重拾「超链接」的无界与互联</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/079.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/079.html</guid>
