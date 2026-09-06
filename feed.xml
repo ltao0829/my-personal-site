@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Sep 2026 13:18:41 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 13:33:45 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                                                                                                                            <item>
+      <title>第 083 期：本地数据的尊严：在云端依赖与服务停摆的焦虑中，重拾「离线可用」的掌控与安全</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/083.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/083.html</guid>
+      <pubDate>Sun, 06 Sep 2026 13:33:45 +0800</pubDate>
+      <description>探讨在云服务泛滥、SaaS 订阅成风的今天，如何通过「本地优先」的理念重拾数字资产的掌控权，构建安全、快速且不依赖网络的个人数字生态。</description>
+    </item>
+    <item>
       <title>第 082 期：异步通讯的尊严：在即时响应与随时在线的绑架中，重拾「深度工作」的边界与静谧</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/082.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/082.html</guid>
