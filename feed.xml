@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 09 Sep 2026 13:45:15 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 13:39:40 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                                                                                                                                            <item>
+      <title>第 087 期：静态网页的尊严：在重度框架与脚本泥潭的加载焦虑中，重拾「纯 HTML 与 CSS」的轻盈与永恒</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/087.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/087.html</guid>
+      <pubDate>Thu, 10 Sep 2026 13:39:40 +0800</pubDate>
+      <description>在动辄数兆、充满复杂脚本的现代 Web 中，重温网页诞生的初衷，探索如何通过纯 HTML 与 CSS 的克制设计，找回互联网最本真的轻盈、普适与长寿。</description>
+    </item>
+    <item>
       <title>第 086 期：键盘交互的尊严：在鼠标点选与触控手势的效率陷阱中，重拾「全键盘操作」的精准与心流</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/086.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/086.html</guid>

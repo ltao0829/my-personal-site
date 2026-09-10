@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 087 期：静态网页的尊严：在重度框架与脚本泥潭的加载焦虑中，重拾「纯 HTML 与 CSS」的轻盈与永恒 - Mazi</title>
+  <meta name="description" content="在动辄数兆、充满复杂脚本的现代 Web 中，重温网页诞生的初衷，探索如何通过纯 HTML 与 CSS 的克制设计，找回互联网最本真的轻盈、普适与长寿。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-09-10</p>
+      <h1>第 087 期：静态网页的尊严：在重度框架与脚本泥潭的加载焦虑中，重拾「纯 HTML 与 CSS」的轻盈与永恒</h1>
+      <p>在动辄数兆、充满复杂脚本的现代 Web 中，重温网页诞生的初衷，探索如何通过纯 HTML 与 CSS 的克制设计，找回互联网最本真的轻盈、普适与长寿。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>你是否也曾有过这样的体验：只是为了阅读一篇几百字的短文，浏览器却要转圈加载好几秒，风扇开始狂转，电池电量肉眼可见地下降。在开发者工具里拉开网络面板，你会发现这个看似简单的页面背后，静默加载了数兆字节的 JavaScript 框架、各种分析追踪脚本、动态字体库以及臃肿的第三方广告组件。现代 Web 正在变得空前繁重，而我们阅读文字、获取信息的代价，也变得空前高昂。</p>
+
+<h2>被脚本绑架的现代 Web</h2>
+<p>曾几何时，万维网（World Wide Web）的诞生是为了在计算机之间共享超文本（Hypertext）。那时的网页是轻盈的、民主的，任何人用最简陋的设备和最慢的调制解调器，都能瞬间打开一个页面并获取知识。然而，在过去的十几年里，Web 技术经历了一场「过度工程化」的军备竞赛。</p>
+<p>单页应用（SPA）框架的流行、复杂的客户端渲染（CSR）、以及各种为了「交互体验」而堆砌的动态脚本，将原本由浏览器原生处理的渲染工作，全部强行推给了用户的终端设备。网页不再是文档，而变成了一个个运行在浏览器里的「重型软件」。这种趋势不仅消耗了宝贵的计算资源，更剥夺了网页最核心的特质——即时性与普适性。当一个只包含纯文字的博客也需要依赖数百兆的 <code>node_modules</code> 编译、并要求用户浏览器运行复杂的 JS 逻辑才能呈现时，我们必须停下来反思：这真的是技术的进步，还是对简单美学的背叛？</p>
+
+<h2>纯 HTML 与 CSS 的美学：克制即是力量</h2>
+<p>拒绝重度脚本，并不意味着我们要退回到上世纪九十年代粗糙无序的网页荒原。相反，纯粹的 HTML 与 CSS 拥有一种极其高级的克制美学。这种美学建立在对「内容本身」的绝对尊重之上。</p>
+<p>在无脚本（No-JS）的约束下，设计回归到了最本质的元素：排版、网格、色彩与留白。语义化的 HTML 标签（如 <code>&lt;article&gt;</code>、<code>&lt;section&gt;</code>、<code>&lt;header&gt;</code>）构成了文章坚固的骨架，而 CSS 则赋予其优雅的皮囊。利用现代 CSS 的原生能力——如 Flexbox、Grid 布局、CSS 变量以及媒体查询，我们完全可以在不写一行 JavaScript 的情况下，实现完美响应式的排版、丝滑的深色模式切换、以及优雅的交互效果。这种设计是静默的，它不喧宾夺主，让读者的注意力重新聚焦于文字的呼吸和思想的流动。</p>
+
+<h2>轻盈、普适与不朽：静态的终极优势</h2>
+<p>当我们剥离了臃肿的动态框架，重新拥抱纯静态网页时，我们会获得一系列现代 Web 难以企及的尊严：</p>
+<ul>
+  <li><strong>极致的轻盈：</strong>一个精心设计的静态页面，其体积往往只有十几 KB。在任何网络环境下，它都能做到「秒开」，没有任何加载动画的焦虑，这是对用户时间和带宽的最大尊重。</li>
+  <li><strong>无条件的普适：</strong>它不挑设备。无论是一台十年前的旧电脑、一部墨水屏阅读器，还是视障人士使用的屏幕阅读器，纯 HTML 都能被完美解析。它打破了数字鸿沟，让信息传递变得真正平等。</li>
+  <li><strong>对抗时间的永恒：</strong>动态网站依赖数据库、服务器环境和特定的后端语言版本。一旦服务商停摆或技术迭代，网站就会崩溃。而纯 HTML 与 CSS 文件是自包含的，它们就像数字世界的石头。二十年前写下的 HTML，今天依然能被任何浏览器完美打开；而今天写下的静态网页，在二十年后也同样不会腐烂。</li>
+</ul>
+
+<h2>实践数字极简：回归超文本的本质</h2>
+<p>作为创作者与技术实践者，我们可以通过以下方式，在自己的数字领地里重拾静态网页的尊严：</p>
+<p>首先，<strong>审视你的工具链。</strong>在构建个人博客或展示页面时，是否真的需要 React 或 Vue 这样的大型框架？或许，一个简单的静态网站生成器（如 Hugo、Eleventy），甚至手工书写 HTML，才是更优雅的选择。其次，<strong>坚持「渐进增强」的原则。</strong>让网页在没有任何脚本加载的情况下，依然能够完整、美观地呈现所有内容。JavaScript 应该只作为体验的润滑剂，而不是内容呈现的入场券。最后，<strong>对每一 KB 的资源保持敬畏。</strong>压缩你的图片，精简你的 CSS，拒绝引入那些无关紧要的第三方统计和花哨特效。</p>
+<p>在这个充斥着算法投喂、弹窗轰炸和重度加载的互联网时代，一个干净、快速、无需加载任何追踪脚本的静态网页，就像是喧嚣都市里的一座静谧茶室。它不试图掌控你的浏览器，也不试图窃取你的注意力，它只是静静地待在那里，用最古老也最体面的方式，传递着文字的力量。这不仅是一种技术选择，更是一种数字生活的主张：在繁复的世界里，守住最纯粹的轻盈。」</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
