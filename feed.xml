@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Sep 2026 13:55:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 13:40:35 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                <item>
+                                                                                                                                                                                                                                                                                                                                                                    <item>
+      <title>第 093 期：文件系统的尊严：在应用沙盒与云端壁垒的组织焦虑中，重拾「目录树结构」的秩序与自由</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/093.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/093.html</guid>
+      <pubDate>Wed, 16 Sep 2026 13:40:35 +0800</pubDate>
+      <description>探讨在现代操作系统和软件逐渐“消灭文件”的趋势下，我们如何通过重拾经典的文件系统与目录树结构，夺回数字资产的所有权与长久自由。</description>
+    </item>
+    <item>
       <title>第 092 期：静默通知的尊严：在即时反馈与信息轰炸的注意力黑洞中，重拾「掌控时间」的专注与平静</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/092.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/092.html</guid>
