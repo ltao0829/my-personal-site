@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Sep 2026 13:48:31 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 13:56:42 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                                    <item>
+                                                                                                                                                                                                                                                                                                                                                                                        <item>
+      <title>第 098 期：静态网页的尊严：在框架臃肿与动态渲染的加载焦虑中，重拾「纯粹交付」的极速与优雅</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/098.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/098.html</guid>
+      <pubDate>Mon, 21 Sep 2026 13:56:42 +0800</pubDate>
+      <description>探讨现代Web开发的臃肿现状，呼吁重拾静态网页的极简、原生与高性能理念，用最纯粹的HTML与CSS，给予用户最体面的阅读体验。</description>
+    </item>
+    <item>
       <title>第 097 期：慢思考的尊严：在信息洪流与即时反馈的认知焦虑中，重拾「深度沉淀」的洞察与智慧</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/097.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/097.html</guid>
