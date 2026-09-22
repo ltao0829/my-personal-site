@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 21 Sep 2026 13:56:42 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 13:54:43 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                                                                                                                                                                                            <item>
+      <title>第 099 期：无脚本的尊严：在臃肿框架与追踪脚本的加载焦虑中，重拾「纯净交付」的极速与安宁</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/099.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/099.html</guid>
+      <pubDate>Tue, 22 Sep 2026 13:54:43 +0800</pubDate>
+      <description>在前端技术日趋复杂、脚本无处不在的今天，我们是否遗忘了无需 JavaScript 也能构建出强大、纯粹且极速的网页体验？本文探讨无脚本哲学的价值。</description>
+    </item>
+    <item>
       <title>第 098 期：静态网页的尊严：在框架臃肿与动态渲染的加载焦虑中，重拾「纯粹交付」的极速与优雅</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/098.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/098.html</guid>
