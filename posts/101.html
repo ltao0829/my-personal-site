@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 101 期：自建服务的尊严：在托管依赖与服务停摆的数字寄生焦虑中，重拾「Self-Hosting」的掌控与自由 - Mazi</title>
+  <meta name="description" content="探讨在商业 SaaS 绑架与云端服务不确定性的当下，如何通过 Self-Hosting（自建服务）重构极简、可控且自主的个人数字主权。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-09-24</p>
+      <h1>第 101 期：自建服务的尊严：在托管依赖与服务停摆的数字寄生焦虑中，重拾「Self-Hosting」的掌控与自由</h1>
+      <p>探讨在商业 SaaS 绑架与云端服务不确定性的当下，如何通过 Self-Hosting（自建服务）重构极简、可控且自主的个人数字主权。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <h2>一、数字吉普赛人的流浪与焦虑</h2>
+<p>在今天的互联网生态中，我们看似拥有了前所未有的数字便利，实则正沦为居无定所的「数字吉普赛人」。我们把最私密的笔记托付给 Notion，把赖以生存的代码托管给 GitHub，把珍贵的个人相册交付给 Google Photos，把团队的沟通留给 Slack。然而，当这些商业巨头宣布调整定价策略、修改隐私条款，甚至毫无预警地停止服务时，我们只能在一夜之间仓皇搬迁数据，经历一次又一次的数字流离失所。</p>
+<p>商业 SaaS 服务的本质是「订阅」与「租赁」。只要你停止付费，或者平台决定改变业务方向，你苦心经营多年的数字资产就会瞬间化为乌有。这种无处不在的数字寄生状态，正是现代人数字焦虑的根源。我们失去了对工具的控制权，也失去了对数据的拥有权。</p>
+
+<h2>二、Self-Hosting：夺回数字主权</h2>
+<p>自建服务（Self-Hosting），是重新夺回个人数字主权的一场静默革命。它意味着你不再是商业平台的租户，而是自己数字领地的领主。通过在自己的虚拟专用服务器（VPS）或家用 NAS 上部署开源服务，你重构了人与工具的关系。</p>
+<p>在这里，没有算法在暗中窥探你的数据以推送精准广告，没有强制性的版本更新打乱你早已习惯的工作流，更没有随时可能降临的「服务终止公告」。你的数据以最原始、最可控的方式存储在自己的硬盘上，你的服务运行在自己完全掌控的算力之中。自建服务，就是我们在数字世界中为自己建造的、遮风挡雨的「自建房」。</p>
+
+<h2>三、极简主义与自建美学</h2>
+<p>很多人对自建服务望而却步，认为它需要高昂的维护成本和复杂的运维技术。然而，真正的自建主义者追求的是一种「极简的技术栈」。我们不需要庞大的微服务架构，不需要复杂的 Kubernetes 集群。一个轻量级的 Docker 环境，配合 SQLite 数据库，加上单文件编译的 Go 或 Rust 应用，就能满足我们 90% 的数字生活需求。</p>
+<ul>
+  <li><strong>Miniflux</strong>：一个极其纯粹的 RSS 阅读器，没有社交分享，没有花哨的推荐，只有极致的阅读体验与极低的内存占用。</li>
+  <li><strong>Syncthing</strong>：去中心化的文件同步工具，让你的数据在设备之间直接传输，无需经过任何第三方云端。</li>
+  <li><strong>Plausible Analytics</strong>：轻量级且注重隐私的网站统计工具，用以替代臃肿且侵犯隐私的 Google Analytics。</li>
+</ul>
+<p>这些工具不仅消耗极低的系统资源（往往只需几十兆内存），而且由于其极简的设计，几乎拥有无限的生命力。它们不依赖复杂的外部生态，只要服务器在运行，它们就能永远安静、高效地为你服务。</p>
+
+<h2>四、在维护中重塑与工具的契约</h2>
+<p>自建服务不仅仅是一种技术选择，更是一种生活方式和认知重塑。在商业软件「即开即用」的温水中，我们逐渐丧失了对工具底层的理解。而自建服务要求我们去配置 Nginx 反向代理、理解 DNS 解析、设置 SSL 证书、制定自动化备份策略。</p>
+<p>在这个过程中，我们重新建立了与工具的深层契约。你开始明白每一比特数据的流向，理解每一次网络请求的代价。这种对底层的掌控感，会转化为一种踏实的心理安全感。你不再害怕任何云端服务的崩溃，因为你拥有随时在另一台机器上重建整个数字世界的能力。这种确定性，在动荡的数字时代弥足珍贵。</p>
+
+<h2>五、长期主义的终极实践</h2>
+<p>自建服务是长期主义在数字时代的终极实践。商业公司追求的是季度财报、用户增长与资本变现，而个人数字资产追求的是长久、稳定与安全。当我们选择自建，我们就是在为未来十年的自己构建数字基础设施。</p>
+<p>一个运行在自建服务器上的静态博客、一个本地加密的密码管理器、一个只属于自己的文件同步节点，它们不会因为资本市场的风吹草动而改变。它们会像老朋友一样，在默默无闻中陪伴我们走过漫长的岁月。数字尊严，不在于我们使用了多么前沿、多么昂贵的商业服务，而在于我们能够完全掌控自己的数字生活，不被算法裹挟，不被商业要挟，自由、自主地在数字世界中生活。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
