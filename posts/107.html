@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 107 期：单文件应用的尊严：在复杂构建与依赖地狱的配置焦虑中，重拾「自包含」的轻盈与长寿 - Mazi</title>
+  <meta name="description" content="在现代Web开发被构建工具、依赖黑洞和云端托管绑架的当下，重拾“单文件应用（Single-File App）”的自包含设计，不仅是一种技术复古，更是一场关于数据主权与软件长寿的深刻自救。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-09-30</p>
+      <h1>第 107 期：单文件应用的尊严：在复杂构建与依赖地狱的配置焦虑中，重拾「自包含」的轻盈与长寿</h1>
+      <p>在现代Web开发被构建工具、依赖黑洞和云端托管绑架的当下，重拾“单文件应用（Single-File App）”的自包含设计，不仅是一种技术复古，更是一场关于数据主权与软件长寿的深刻自救。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>我们正处在一个“配置多于编码”的荒诞时代。在今天，如果你想开发一个简单的个人记账工具或便签应用，标准的现代开发流程是这样的：初始化 Node.js 项目，安装几百兆的 <code>node_modules</code> 依赖，配置 Vite 或 Webpack 打包工具，引入某个前端框架，最后将其部署到某个云端托管平台。整个过程中，你实际上在与无数个黑盒和随时可能失效的第三方服务打交道。</p><p>然而，当五年、十年过去，当当初的托管平台关闭、依赖包因为安全漏洞被废弃、构建工具不再兼容新的 Node 版本时，你亲手写的这个应用还能运行吗？答案大概率是：它将成为一堆无法启动的数字垃圾。在这种对外部生态的深度依赖中，我们正在失去对软件生命周期的掌控。是时候重新审视一种古老而优雅的软件形态了——<strong>单文件应用（Single-File Application，简称 SFA）</strong>。</p><h2>构建地狱：现代软件的“易腐性”</h2><p>现代 Web 技术的繁荣建立在极度细分的工程化之上，但这种繁荣的代价是极高的脆弱性。一个依赖于 npm 生态和云端 API 的应用，其生命周期是受限的。它就像一株温室里的植物，必须依赖特定的土壤（构建环境）、水分（网络连接）和阳光（云服务商）才能存活。</p><p>这种“易腐性”带来了深层的技术焦虑。开发者们不得不花费大量时间去维护依赖、更新配置，而不是专注于功能本身。当一个工具的维护成本超越了它带来的价值，它就走向了死亡。我们失去了创造“可以传世的数字工具”的能力。而单文件应用，则是对这种脆弱现状的一次优雅叛逆。</p><h2>什么是单文件应用的尊严？</h2><p>单文件应用，顾名思义，就是将 HTML、CSS、JavaScript 以及所有必要的资源（甚至包括图标和本地数据结构）全部容纳在一个 <code>.html</code> 文件中。它不依赖于任何构建步骤，不需要 <code>npm install</code>，也不需要本地运行一个开发服务器。你只需要双击这个文件，它就能在任何现代浏览器中完美运行。</p><p>这种“自包含（Self-contained）”的设计，赋予了软件以下三种至关重要的尊严：</p><ul><li><strong>绝对的掌控权：</strong> 没有外部依赖，没有第三方追踪，没有云端断网的风险。所有的逻辑和数据都在这一个文件里，它完全属于你。</li><li><strong>跨越时间的生命力：</strong> HTML 规范具有极强的向后兼容性。一个写于 2004 年的标准 HTML 页面，在 2024 年的 Chrome 中依然能完美渲染。这意味着，一个设计良好的单文件应用，在三十年后依然可以双击打开并正常使用。这是任何现代单页应用（SPA）都无法企及的生命周期。</li><li><strong>无缝的便携性：</strong> 它可以存在于你的 U 盘里、网盘里，甚至通过一封电子邮件发送给朋友。它不需要部署，文件本身就是应用，也是分发渠道。</li></ul><h2>现代原生 API：赋予单文件应用新生命</h2><p>很多人对单文件应用的印象还停留在上世纪末简陋的静态网页。事实上，随着现代 Web 标准的演进，今天的原生 API 已经足够强大，无需任何构建工具，我们就能在单个 HTML 文件中实现极其复杂的交互和精美的排版：</p><ul><li><strong>原生 ES Modules：</strong> 我们可以直接在 <code>&lt;script type="module"&gt;</code> 中导入 CDN 上的库，或者直接编写模块化的原生 JavaScript，无需 Babel 或 Webpack 编译。</li><li><strong>CSS 变量与 Grid/Flexbox：</strong> 现代 CSS 让我们无需 Sass 或 Tailwind 就能轻松实现响应式布局、暗黑模式切换和优雅的视觉动效。</li><li><strong>IndexedDB 与 LocalStorage：</strong> 配合浏览器本地存储，单文件应用可以拥有强大的本地数据库，实现完整的数据增删改查，而无需任何后端服务器。</li><li><strong>Web Components：</strong> 利用原生组件化技术，我们可以在单个文件中优雅地组织代码结构，保持代码的可读性与可维护性。</li></ul><h2>重拾“一即是一切”的自洽美学</h2><p>拥抱单文件应用，不仅是一种技术选择，更是一种生活哲学。它强迫我们克制无节制的开发欲望。在有限的单个文件空间里，你会开始思考：我真的需要引入这个 100KB 的动画库吗？这个功能真的必须要用复杂的图表库来实现吗？</p><p>在这种克制中，设计美学与排版艺术反而得到了升华。你会更加关注系统字体的优雅呈现，关注原生 HTML 标签的语义化，关注代码本身的精简与高效。最终产出的，是一个体积可能只有几十 KB，但响应极速、界面干练、功能自洽的艺术品。</p><p>在这个万物皆可“云端订阅”、数据被巨头绑架的时代，亲手编写或使用一个单文件应用，就像是在数字荒野中建造了一座完全属于自己的、永不坍塌的避难所。它静静地躺在你的硬盘里，不占用多余的资源，不窥探你的隐私，只要浏览器还在，它就永远为你服务。这，就是属于数字手工艺者的体面与尊严。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

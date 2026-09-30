@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 29 Sep 2026 14:37:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 14:19:54 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                                                                        <item>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <item>
+      <title>第 107 期：单文件应用的尊严：在复杂构建与依赖地狱的配置焦虑中，重拾「自包含」的轻盈与长寿</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/107.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/107.html</guid>
+      <pubDate>Wed, 30 Sep 2026 14:19:54 +0800</pubDate>
+      <description>在现代Web开发被构建工具、依赖黑洞和云端托管绑架的当下，重拾“单文件应用（Single-File App）”的自包含设计，不仅是一种技术复古，更是一场关于数据主权与软件长寿的深刻自救。</description>
+    </item>
+    <item>
       <title>第 106 期：长链接的尊严：在信息潮汐与链接腐烂的数字焦虑中，重拾「恒久引用」的价值与责任</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/106.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/106.html</guid>
