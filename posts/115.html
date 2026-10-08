@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 115 期：静态网页的尊严：在动态框架与服务器维护的运维焦虑中，重拾「Static HTML」的纯粹与永恒 - Mazi</title>
+  <meta name="description" content="在动辄需要配置复杂后端与数据库的今天，重新审视静态网页的物理价值，探讨如何在过载的 Web 时代重拾「Static HTML」的轻盈、长寿与纯粹。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-10-08</p>
+      <h1>第 115 期：静态网页的尊严：在动态框架与服务器维护的运维焦虑中，重拾「Static HTML」的纯粹与永恒</h1>
+      <p>在动辄需要配置复杂后端与数据库的今天，重新审视静态网页的物理价值，探讨如何在过载的 Web 时代重拾「Static HTML」的轻盈、长寿与纯粹。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>在这个连展示一篇个人日记都需要部署一套 Docker 镜像、配置 PostgreSQL 数据库、再通过 Next.js 进行服务端渲染（SSR）的时代，互联网似乎变得前所未有地沉重。我们习惯了无休止的依赖更新、安全漏洞修补以及服务器续费的提醒。然而，当我们在复杂的现代 Web 架构中疲于奔命时，是否还记得，Web 最初的模样，不过是一张张安静躺在服务器硬盘里的静态 HTML 页面？</p>
+
+<h2>动态的代价与运维的焦虑</h2>
+<p>不可否认，动态网页和复杂的单页应用（SPA）极大地丰富了互联网的交互体验。但这种繁荣的背后，是以牺牲「长寿」和「简单」为代价的。为了实现一些微不足道的动态效果，我们引入了庞大的 JavaScript 框架、复杂的构建工具链以及脆弱的数据库依赖。一个普通的个人博客，一旦停止维护两三年，其底层的 Node.js 版本、依赖的 npm 包、数据库接口就可能由于安全漏洞或版本不兼容而崩溃。动态，意味着它是一个必须时刻依靠外部能量维持的「活体」，一旦服务器断电、API 变更或数据库损坏，它便不复存在。这种对运行环境的强依赖，给创作者带来了无尽的维护焦虑。</p>
+
+<h2>静态网页的物理美学</h2>
+<p>与此相对，静态网页（Static HTML）则展现出一种近乎物理法则般的稳定与美感。一个 <code>.html</code> 文件，加上几张图片和一份 <code>.css</code> 样式表，就是一个完整的、自包含的宇宙。它不需要服务器端的数据库查询，不需要复杂的路由解析，甚至不需要任何后端运行环境。对它而言，服务器仅仅是一个「文件分发器」。这种物理上的简单性，带来了极致的性能：没有数据库查询的延迟，没有复杂的 CPU 渲染开销，在任何廉价的 CDN 节点上，它都能以毫秒级的速度呈现在用户面前。这种纯粹的「所见即所得」，是现代任何高大上的动态框架都无法比拟的。</p>
+
+<h2>永恒的生命力与低碳的优雅</h2>
+<p>更重要的是，静态网页具有一种「面向未来的免疫力」。1991 年世界上第一个网页（CERN 的万维网项目页面）至今依然可以被现代浏览器完美打开和阅读。而你在五年前用某个流行一时的动态框架搭建的网站，现在可能连本地运行都成问题。静态网页不需要昂贵的服务器开销，甚至可以免费托管在 GitHub Pages、Cloudflare Pages 等平台上。它不消耗多余的服务器算力，是对环境极其友好的「低碳」存在。对于长期主义的写作者而言，静态网页意味着你的文字和思想，不会因为某个商业平台的倒闭、某个数据库的损坏或者你某天忘记给服务器续费而瞬间蒸发。只要世界上还有一个浏览器，你的页面就能永恒地存在下去。</p>
+
+<h2>重拾「Static HTML」的克制</h2>
+<p>重拾静态网页的尊严，并不是要我们退化到上世纪九十年代的手工时代，而是要我们在技术选型上保持克制与清醒。在动笔写一个新项目或搭建个人主页时，不妨先问自己几个问题：我真的需要数据库吗？我真的需要实时交互吗？如果答案是否定的，那么静态生成就是最优雅、最长寿的选择。通过像 Hugo、Jekyll 这样优秀的静态网站生成器，我们既能享受现代开发的便利，又能产出纯粹、干净的静态 HTML。将纷繁复杂的逻辑留在本地编译阶段，将最简单、最稳固的成果呈献给互联网。这种克制，是对读者的尊重，也是对互联网公共资源的一种善意。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
