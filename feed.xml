@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 08 Oct 2026 15:02:55 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 15:09:55 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            <item>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <item>
+      <title>第 116 期：主动订阅的尊严：在算法推荐与信息茧房的投喂焦虑中，重拾「RSS」的掌控与纯粹</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/116.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/116.html</guid>
+      <pubDate>Fri, 09 Oct 2026 15:09:55 +0800</pubDate>
+      <description>在算法编织的信息茧房与无休止的推荐流中，重温 RSS 这一古典协议，夺回我们对数字生活与知识获取的主动权。</description>
+    </item>
+    <item>
       <title>第 115 期：静态网页的尊严：在动态框架与服务器维护的运维焦虑中，重拾「Static HTML」的纯粹与永恒</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/115.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/115.html</guid>
