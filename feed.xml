@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Oct 2026 15:09:55 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 14:44:36 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                <item>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <item>
+      <title>第 117 期：命令行界面的尊严：在图形界面与鼠标操作的便利中，重拾「终端」的精准与掌控</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/117.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/117.html</guid>
+      <pubDate>Sat, 10 Oct 2026 14:44:36 +0800</pubDate>
+      <description>在图形界面的光鲜背后，命令行界面以其纯粹、精准与高效，提供了无与伦比的系统掌控力。本文将探讨重拾终端交互的价值。</description>
+    </item>
+    <item>
       <title>第 116 期：主动订阅的尊严：在算法推荐与信息茧房的投喂焦虑中，重拾「RSS」的掌控与纯粹</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/116.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/116.html</guid>
