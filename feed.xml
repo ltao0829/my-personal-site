@@ -5,10 +5,17 @@
     <link>https://ltao0829.github.io/my-personal-site/</link>
     <description>Mazi 的个人博客 - 关注技术、创作、生活方式与长期主义。</description>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 17 Oct 2026 13:21:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 13:28:58 +0800</lastBuildDate>
     <atom:link href="https://ltao0829.github.io/my-personal-site/feed.xml" rel="self" type="application/rss+xml"/>
     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <item>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <item>
+      <title>第 124 期：零依赖的尊严：在臃肿框架与过度封装的膨胀中，重拾「原生代码」的极致与纯粹</title>
+      <link>https://ltao0829.github.io/my-personal-site/posts/124.html</link>
+      <guid>https://ltao0829.github.io/my-personal-site/posts/124.html</guid>
+      <pubDate>Sun, 18 Oct 2026 13:28:58 +0800</pubDate>
+      <description>在现代开发生态动辄数百兆依赖与层层黑盒封装的时代，重新审视「零依赖」与 Web 原生标准的独特价值，重拾代码掌控感、极致性能与长久维系的可能性。</description>
+    </item>
+    <item>
       <title>第 123 期：异步沟通的尊严：在即时通讯与实时响应的碎片焦虑中，重拾「深度专注」与「高效从容」</title>
       <link>https://ltao0829.github.io/my-personal-site/posts/123.html</link>
       <guid>https://ltao0829.github.io/my-personal-site/posts/123.html</guid>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>第 124 期：零依赖的尊严：在臃肿框架与过度封装的膨胀中，重拾「原生代码」的极致与纯粹 - Mazi</title>
+  <meta name="description" content="在现代开发生态动辄数百兆依赖与层层黑盒封装的时代，重新审视「零依赖」与 Web 原生标准的独特价值，重拾代码掌控感、极致性能与长久维系的可能性。" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-title" href="../index.html">Mazi</a>
+
+      <nav class="site-nav" aria-label="主导航">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于我</a>
+        <a href="../blog.html" aria-current="page">博客</a>
+        <a href="../contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 返回链接 -->
+    <div style="margin: 36px 0 0;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+
+    <!-- 文章头部信息 -->
+    <section class="page-heading" style="padding-top: 24px; margin-bottom: 24px;">
+      <p class="eyebrow">发布于 2026-10-18</p>
+      <h1>第 124 期：零依赖的尊严：在臃肿框架与过度封装的膨胀中，重拾「原生代码」的极致与纯粹</h1>
+      <p>在现代开发生态动辄数百兆依赖与层层黑盒封装的时代，重新审视「零依赖」与 Web 原生标准的独特价值，重拾代码掌控感、极致性能与长久维系的可能性。</p>
+    </section>
+
+    <!-- 文章正文内容 -->
+    <article class="content">
+      <p>在程序员社区中，有一张流传甚广的经典梗图：黑洞是宇宙中质量最大的天体，而唯一能与之抗衡的，是前端项目的 <code>node_modules</code> 文件夹。这句调侃背后，折射出的是现代软件开发领域普遍面临的尴尬现状——为了渲染几个简单的文本页面，我们不得不拉取成百上千个第三方依赖软件包，构建工具链膨胀得如同不可名状的庞然大物。</p><h2>膨胀的工具链与失控的掌控力</h2><p>曾几何时，写一个网页只需要一个文本编辑器，新建一个 HTML 文件、写几行 CSS 样式和 Vanilla JavaScript，双击就能在浏览器里完美运行。然而在如今的开发语境下，我们似乎被裹挟着进入了一种“无框架不开发”的怪圈。</p><p>为了引入一个微小的功能（比如日期格式化或简单的动画效果），开发者们习惯性地敲下 <code>npm install</code>。这种依靠堆叠第三方库构建软件的方式，看似极大地提升了初期开发速度，却悄然剥夺了我们对代码底层的掌控力。依赖层层嵌套，黑盒越叠越高，一旦出现安全漏洞（如供应链攻击）或版本断代，整个项目便陷入无法维护的泥潭。</p><h2>原生 Web 的力量：跨越时间的生命力</h2><p>Web 技术最震撼人心却也最常被忽略的特质，在于它的<strong>向下兼容性与标准持久性</strong>。十五年前按照 W3C 标准编写的纯 HTML 和 CSS，在今天的最新版浏览器中依然能够毫厘不爽地完美呈现；而五年前基于某个过时前端框架编写的代码，如今可能连构建流程都无法顺利跑通。</p><p>重拾「零依赖」（Zero-Dependency）或轻依赖的开发理念，并非主张倒退回原始时代拒绝一切抽象，而是倡导一种对标准与原生的敬畏：</p><ul><li><strong>极致的性能体验：</strong>无需加载几百 KB 的框架运行时，页面的首屏渲染与交互响应可以轻松做到亚毫秒级。</li><li><strong>绝对的安全与掌控：</strong>没有复杂的供应链依赖树，每一行运行在用户终端的代码都清晰可查、完全可控。</li><li><strong>长久的生命周期：</strong>依托于 W3C 原生 Web 标准的代码，拥有远超任何流行框架的生命周期，无需陷入无休止的升级与重构漩涡。</li></ul><h2>减法的设计哲学：将复杂留给工具，将纯粹还给应用</h2><p>在个人项目、静态博客以及许多中小型工具的开发中，践行「零依赖」哲学往往能带来意想不到的清爽感。现代浏览器原生支持的功能早已今非昔比：CSS Grid 和 Flexbox 让复杂布局变得优雅，原生 Custom Elements 和 Shadow DOM 提供了轻量级的组件化方案，而 <code>fetch</code> API 与现代 JavaScript 的新特性更是让很多历史悠久的辅助库显得不再必要。</p><p>当我们在项目中手动划定边界，有意识地抵制“再装一个包”的诱惑时，我们会被迫重新思考问题的本质，寻找最直接、最简洁的解决方案。这种专注与沉淀，正是技术深度建立的关键过程。</p><h2>结语：在优雅的约束中重拾乐趣</h2><p>代码的尊严，不在于它使用了多么繁复深奥的工具链，而在于它是否用最优雅、最轻盈的方式解决了真实的问题。「零依赖」不仅是一种技术选择，更是一种对于纯粹、极简与长期主义的数字生活态度的践行。</p><p>下一次当你准备开启一个新的个人项目时，不妨试试关闭构建工具，重新从一个空白纯粹的 <code>index.html</code> 开始。你会发现，那种直接与标准对话、毫秒即达的纯粹快感，一直都在那里，从未离开。</p>
+    </article>
+
+    <div style="margin: 40px 0; border-top: 1px solid var(--border); padding-top: 24px;">
+      <a href="../blog.html" class="blog-link" style="font-weight: 600;">← 返回博客列表</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Mazi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
